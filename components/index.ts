@@ -43,3 +43,4 @@ export * from './BasicHelp/props'
 export * from './BasicTitle/props'
 
 export * from './_common/utils'
+export * from './_common/hooks/useDesign'

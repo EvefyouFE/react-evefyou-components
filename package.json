@@ -1,6 +1,6 @@
 {
   "name": "react-evefyou-components",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -136,7 +136,7 @@
     "postcss-preset-env": "^8.3.2",
     "rimraf": "^5.0.1",
     "tslib": "^2.6.1",
-    "typescript": "^5.0.4",
+    "typescript": "^5.1.6",
     "vite": "^4.4.5",
     "vite-plugin-dts": "^3.5.1",
     "vite-plugin-lib-inject-css": "^1.2.1",
