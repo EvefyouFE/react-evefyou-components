@@ -26,6 +26,8 @@ const regexOfPackages = externalPackages
 
 const entries = {
   'index': pathResolve('components/index.ts'),
+  'zh_CN': pathResolve('components/locale/zh-cn'),
+  'en_US': pathResolve('components/locale/en-us'),
   'BasicButton': pathResolve('components/BasicButton'),
   'BasicPopButton': pathResolve('components/BasicPopButton'),
   'BasicDropdown': pathResolve('components/BasicDropdown'),
@@ -36,7 +38,12 @@ const entries = {
   'BasicScroll': pathResolve('components/BasicScroll'),
   'BasicTable': pathResolve('components/BasicTable'),
   'BasicTitle': pathResolve('components/BasicTitle'),
+  'BasicBreadcrumb': pathResolve('components/BasicBreadcrumb'),
+  'BasicFallback': pathResolve('components/BasicFallback'),
+  'BasicNProgress': pathResolve('components/BasicNProgress'),
+  'BasicResult': pathResolve('components/BasicResult'),
 }
+const otherEntryFile = Object.keys(entries).filter(e => e !== 'index')
 
 export default defineConfig({
   plugins: [
@@ -51,11 +58,10 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
       // rollupTypes: true,
-      outDir: ['dist/cjs', 'dist/es'],
+      outDir: ['types'],
       beforeWriteFile: (filePath, content) => {
         //   console.log('beforeWriteFile', filePath)
-        const entryDFile = Object.keys(entries)
-          .filter(e => e !== 'index')
+        const entryDFile = otherEntryFile
           .map(e => e.concat('.d.ts'))
           .find(e => filePath.includes(e))
         //   entryDFile && console.log('beforeWriteFile entryDFile', entryDFile)
@@ -81,23 +87,39 @@ export default defineConfig({
         minify: true,
         reportCompressedSize: true,
         cssCodeSplit: true,
+        outDir: '.',
       },
       entry: entries,
-      fileName: (format, entryName) => entryName === 'index'
-        ? `${format}/index.${format === 'cjs' ? format : 'js'}`
-        : `${format}/${entryName}/index.${format === 'cjs' ? format : 'js'}`,
+      fileName: (format, entryName) => {
+        return entryName === 'index'
+          ? `${format}/index.js`
+          : entryName.includes('_')
+            ? `${format}/locale/${entryName}.js`
+            : `${format}/[name]/index.js`
+      },
       name: 'react-evefyou-components',
       formats: ["es", "cjs"],
       rollupOptions: {
         output: {
-          entryFileNames: (chunkInfo) => {
-            console.log('chunkInfo', chunkInfo)
-            return chunkInfo.name === 'index' ? `[format]/index.js` : `[format]/[name]/index.js`
+          // entryFileNames: (chunkInfo) => {
+          //   console.log('chunkInfo', chunkInfo)
+          //   return chunkInfo.name === 'index'
+          //     ? `[format]/index.js`
+          //     : chunkInfo.name.includes('_')
+          //       ? `[format]/locale/[name].js`
+          //       : `[format]/[name]/index.js`
+          // },
+          chunkFileNames: (chunkInfo) => {
+            // console.log('chunkInfo', chunkInfo)
+            return otherEntryFile.reduce(
+              (acc, cur) => !chunkInfo.isEntry && chunkInfo.moduleIds.findIndex(s => s.includes(cur)) !== -1
+                ? `[format]/${cur}/other.js` : acc,
+              '[format]/_common/[name].js'
+            )
           },
-          chunkFileNames: '[format]/_common/[name]/[name].js',
           assetFileNames: '[ext]/[name].[ext]',
         },
-        external: regexOfPackages
+        external: [...regexOfPackages, './components/_common/utils/generate.ts']
       }
     })
   ],

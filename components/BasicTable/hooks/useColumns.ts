@@ -7,7 +7,7 @@ import { BasicTableProps, TableColumnProps, TableColumnPropsWithKey } from "../p
 import { CellFormat } from "../types/table";
 import { GetColumnsParams, UseColumnsReturnType } from "../types/tableColumns";
 import { formatToDate } from "@common/utils/dateUtil";
-import { formatById } from '@common/locales';
+import { formatById } from '@/locale/locale';
 import { uuid } from "@common/utils/generate";
 
 

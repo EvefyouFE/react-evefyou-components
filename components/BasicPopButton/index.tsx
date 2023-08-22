@@ -9,7 +9,7 @@
 import { Popconfirm } from 'antd';
 import { FC } from 'react';
 import { BasicButton } from '../BasicButton';
-import { formatById } from '@common/locales';
+import { formatById } from '@/locale/locale';
 import { BasicPopButtonProps } from '../BasicPopButton/props';
 
 export const BasicPopButton: FC<BasicPopButtonProps> = (props) => {

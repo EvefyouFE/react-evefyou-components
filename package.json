@@ -1,80 +1,114 @@
 {
   "name": "react-evefyou-components",
-  "version": "1.0.5",
+  "version": "1.0.10",
   "description": "",
   "type": "module",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/es/index.js",
-  "types": "./dist/es/index.d.ts",
+  "main": "./cjs/index.js",
+  "module": "./es/index.js",
+  "types": "./types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/es/index.js",
-      "require": "./dist/cjs/index.js",
-      "types": "./dist/es/index.d.ts"
+      "import": "./es/index.js",
+      "require": "./cjs/index.js",
+      "types": "./types/index.d.ts"
     },
     "./windi.css": {
-      "import": "./dist/css/windi.css",
-      "require": "./dist/css/windi.css"
+      "import": "./css/windi.css",
+      "require": "./css/windi.css"
+    },
+    "./locale/zh_CN": {
+      "import": "./es/locale/zh_CN.js",
+      "require": "./cjs/locale/zh_CN.js",
+      "types": "./types/locale/zh-cn/index.d.ts"
+    },
+    "./locale/en_US": {
+      "import": "./es/locale/en_US.js",
+      "require": "./cjs/locale/en_US.js",
+      "types": "./types/locale/en-us/index.d.ts"
     },
     "./BasicButton": {
-      "import": "./dist/es/BasicButton/index.js",
-      "require": "./dist/cjs/BasicButton/index.js",
-      "types": "./dist/es/index.d.ts"
+      "import": "./es/BasicButton/index.js",
+      "require": "./cjs/BasicButton/index.js",
+      "types": "./types/index.d.ts"
     },
     "./BasicDropdown": {
-      "import": "./dist/es/BasicDropdown/index.js",
-      "require": "./dist/cjs/BasicDropdown/index.js",
-      "types": "./dist/es/index.d.ts"
+      "import": "./es/BasicDropdown/index.js",
+      "require": "./cjs/BasicDropdown/index.js",
+      "types": "./types/index.d.ts"
     },
     "./BasicForm": {
-      "import": "./dist/es/BasicForm/index.js",
-      "require": "./dist/cjs/BasicForm/index.js",
-      "types": "./dist/es/index.d.ts"
+      "import": "./es/BasicForm/index.js",
+      "require": "./cjs/BasicForm/index.js",
+      "types": "./types/index.d.ts"
     },
     "./BasicHelp": {
-      "import": "./dist/es/BasicHelp/index.js",
-      "require": "./dist/cjs/BasicHelp/index.js",
-      "types": "./dist/es/index.d.ts"
+      "import": "./es/BasicHelp/index.js",
+      "require": "./cjs/BasicHelp/index.js",
+      "types": "./types/index.d.ts"
     },
     "./BasicIcon": {
-      "import": "./dist/es/BasicIcon/index.js",
-      "require": "./dist/cjs/BasicIcon/index.js",
-      "types": "./dist/es/index.d.ts"
+      "import": "./es/BasicIcon/index.js",
+      "require": "./cjs/BasicIcon/index.js",
+      "types": "./types/index.d.ts"
     },
     "./BasicModal": {
-      "import": "./dist/es/BasicModal/index.js",
-      "require": "./dist/cjs/BasicModal/index.js",
-      "types": "./dist/es/index.d.ts"
+      "import": "./es/BasicModal/index.js",
+      "require": "./cjs/BasicModal/index.js",
+      "types": "./types/index.d.ts"
     },
     "./BasicPopButton": {
-      "import": "./dist/es/BasicForm/index.js",
-      "require": "./dist/cjs/BasicForm/index.js",
-      "types": "./dist/es/index.d.ts"
+      "import": "./es/BasicForm/index.js",
+      "require": "./cjs/BasicForm/index.js",
+      "types": "./types/index.d.ts"
     },
     "./BasicScroll": {
-      "import": "./dist/es/BasicForm/index.js",
-      "require": "./dist/cjs/BasicForm/index.js",
-      "types": "./dist/es/index.d.ts"
+      "import": "./es/BasicForm/index.js",
+      "require": "./cjs/BasicForm/index.js",
+      "types": "./types/index.d.ts"
     },
     "./BasicTable": {
-      "import": "./dist/es/BasicTable/index.js",
-      "require": "./dist/cjs/BasicTable/index.js",
-      "types": "./dist/es/index.d.ts"
+      "import": "./es/BasicTable/index.js",
+      "require": "./cjs/BasicTable/index.js",
+      "types": "./types/index.d.ts"
     },
     "./BasicTitle": {
-      "import": "./dist/es/BasicTitle/index.js",
-      "require": "./dist/cjs/BasicTitle/index.js",
-      "types": "./dist/es/index.d.ts"
+      "import": "./es/BasicTitle/index.js",
+      "require": "./cjs/BasicTitle/index.js",
+      "types": "./types/index.d.ts"
+    },
+    "./BasicBreadcrumb": {
+      "import": "./es/BasicBreadcrumb/index.js",
+      "require": "./cjs/BasicBreadcrumb/index.js",
+      "types": "./types/index.d.ts"
+    },
+    "./BasicFallback": {
+      "import": "./es/BasicFallback/index.js",
+      "require": "./cjs/BasicFallback/index.js",
+      "types": "./types/index.d.ts"
+    },
+    "./BasicNProgress": {
+      "import": "./es/BasicNProgress/index.js",
+      "require": "./cjs/BasicNProgress/index.js",
+      "types": "./types/index.d.ts"
+    },
+    "./BasicResult": {
+      "import": "./es/BasicResult/index.js",
+      "require": "./cjs/BasicResult/index.js",
+      "types": "./types/index.d.ts"
     }
   },
   "files": [
-    "dist"
+    "es",
+    "cjs",
+    "css",
+    "types"
   ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "build:tsc": "tsc",
     "clean": "rimraf node_modules",
+    "clean:build": "rimraf es && rimraf cjs && rimraf css && rimraf dist && rimraf types",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -84,9 +118,7 @@
   },
   "keywords": [
     "react",
-    "conventional",
-    "dynamic",
-    "router",
+    "components",
     "evefyou"
   ],
   "author": "EvefyouFE",
@@ -107,11 +139,15 @@
     "classnames": ">=2.3.2",
     "moment": ">=2.29.4",
     "ramda": ">=0.29.0",
-    "react": ">= 16.0.0",
-    "react-dom": ">=16.0.0",
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0",
+    "react-router": ">=6.10.0",
+    "react-router-dom": ">=6.10.0",
     "react-draggable": ">=4.4.5",
     "react-evefyou-hooks": ">=1.0.7",
+    "react-evefyou-router": ">=1.0.3",
     "react-intl": ">=6.4.4",
+    "nprogress": ">=0.2.0",
     "uuid": ">=9.0.0"
   },
   "devDependencies": {
@@ -137,6 +173,7 @@
     "rimraf": "^5.0.1",
     "tslib": "^2.6.1",
     "typescript": "^5.1.6",
+    "@types/nprogress": "^0.2.0",
     "vite": "^4.4.5",
     "vite-plugin-dts": "^3.5.1",
     "vite-plugin-lib-inject-css": "^1.2.1",

@@ -8,7 +8,7 @@ import { itemComponentMap } from '../itemComponentMap';
 import { ItemInnerProps } from '../props';
 import { createPlaceholderMessage, validator } from '../utils/helper';
 import { BasicHelp } from '@/BasicHelp';
-import { formatById } from '@common/locales';
+import { formatById } from '@/locale/locale';
 import { Nullable, Recordable } from "../../types";
 
 function renderLabelHelpMessage({

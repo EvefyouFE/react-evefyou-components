@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { PAGE_SIZE, PAGE_SIZE_OPTIONS } from "../constants";
 import { BasicTableProps } from "../props";
 import { UsePaginationReturnType } from "../types/tablePagination";
-import { formatById } from '@common/locales';
+import { formatById } from '@/locale/locale';
 
 
 export const DEFAULT_PAGINATION_PROPS: TablePaginationConfig = {

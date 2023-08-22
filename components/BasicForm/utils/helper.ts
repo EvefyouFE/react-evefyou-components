@@ -2,7 +2,7 @@ import { RuleObject } from "antd/es/form";
 import { StoreValue } from "antd/es/form/interface";
 import { isNil } from "ramda";
 import { ItemComponentType } from "../types/form";
-import { formatById } from '@common/locales';
+import { formatById } from '@/locale/locale';
 
 /**
  * @description: 生成placeholder
