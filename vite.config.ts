@@ -34,6 +34,7 @@ const entries = {
   'BasicForm': pathResolve('components/BasicForm'),
   'BasicHelp': pathResolve('components/BasicHelp'),
   'BasicIcon': pathResolve('components/BasicIcon'),
+  'BasicMenu': pathResolve('components/BasicMenu'),
   'BasicModal': pathResolve('components/BasicModal'),
   'BasicScroll': pathResolve('components/BasicScroll'),
   'BasicTable': pathResolve('components/BasicTable'),
@@ -101,14 +102,6 @@ export default defineConfig({
       formats: ["es", "cjs"],
       rollupOptions: {
         output: {
-          // entryFileNames: (chunkInfo) => {
-          //   console.log('chunkInfo', chunkInfo)
-          //   return chunkInfo.name === 'index'
-          //     ? `[format]/index.js`
-          //     : chunkInfo.name.includes('_')
-          //       ? `[format]/locale/[name].js`
-          //       : `[format]/[name]/index.js`
-          // },
           chunkFileNames: (chunkInfo) => {
             // console.log('chunkInfo', chunkInfo)
             return otherEntryFile.reduce(

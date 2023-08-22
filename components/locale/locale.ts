@@ -28,6 +28,7 @@ export const useLocale = () => {
     formatById
   };
 };
+
 export function formatMessage({ id, values }: Props): React.ReactNode {
   return React.createElement(FormattedMessage, {
     id,
