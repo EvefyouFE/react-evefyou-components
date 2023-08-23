@@ -1,6 +1,6 @@
 {
   "name": "react-evefyou-components",
-  "version": "1.0.15",
+  "version": "1.0.17",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
@@ -9,82 +9,100 @@
   "exports": {
     ".": {
       "import": "./es/index.js",
-      "require": "./cjs/index.js"
+      "require": "./cjs/index.js",
+      "types": "./index.d.ts"
     },
     "./locale/zh_CN": {
       "import": "./es/locale/zh_CN/index.js",
-      "require": "./cjs/locale/zh_CN/index.js"
+      "require": "./cjs/locale/zh_CN/index.js",
+      "types": "./index.d.ts"
     },
     "./locale/en_US": {
       "import": "./es/locale/en_US/index.js",
-      "require": "./cjs/locale/en_US/index.js"
+      "require": "./cjs/locale/en_US/index.js",
+      "types": "./index.d.ts"
     },
     "./BasicButton": {
       "import": "./es/BasicButton/index.js",
-      "require": "./cjs/BasicButton/index.js"
+      "require": "./cjs/BasicButton/index.js",
+      "types": "./index.d.ts"
     },
     "./BasicDropdown": {
       "import": "./es/BasicDropdown/index.js",
-      "require": "./cjs/BasicDropdown/index.js"
+      "require": "./cjs/BasicDropdown/index.js",
+      "types": "./index.d.ts"
     },
     "./BasicForm": {
       "import": "./es/BasicForm/index.js",
-      "require": "./cjs/BasicForm/index.js"
+      "require": "./cjs/BasicForm/index.js",
+      "types": "./index.d.ts"
     },
     "./BasicHelp": {
       "import": "./es/BasicHelp/index.js",
-      "require": "./cjs/BasicHelp/index.js"
+      "require": "./cjs/BasicHelp/index.js",
+      "types": "./index.d.ts"
     },
     "./BasicIcon": {
       "import": "./es/BasicIcon/index.js",
-      "require": "./cjs/BasicIcon/index.js"
+      "require": "./cjs/BasicIcon/index.js",
+      "types": "./index.d.ts"
     },
     "./BasicMenu": {
       "import": "./es/BasicMenu/index.js",
-      "require": "./cjs/BasicMenu/index.js"
+      "require": "./cjs/BasicMenu/index.js",
+      "types": "./index.d.ts"
     },
     "./BasicModal": {
       "import": "./es/BasicModal/index.js",
-      "require": "./cjs/BasicModal/index.js"
+      "require": "./cjs/BasicModal/index.js",
+      "types": "./index.d.ts"
     },
     "./BasicPopButton": {
       "import": "./es/BasicPopButton/index.js",
-      "require": "./cjs/BasicPopButton/index.js"
+      "require": "./cjs/BasicPopButton/index.js",
+      "types": "./index.d.ts"
     },
     "./BasicScroll": {
       "import": "./es/BasicScroll/index.js",
-      "require": "./cjs/BasicScroll/index.js"
+      "require": "./cjs/BasicScroll/index.js",
+      "types": "./index.d.ts"
     },
     "./BasicTable": {
       "import": "./es/BasicTable/index.js",
-      "require": "./cjs/BasicTable/index.js"
+      "require": "./cjs/BasicTable/index.js",
+      "types": "./index.d.ts"
     },
     "./BasicTitle": {
       "import": "./es/BasicTitle/index.js",
-      "require": "./cjs/BasicTitle/index.js"
+      "require": "./cjs/BasicTitle/index.js",
+      "types": "./index.d.ts"
     },
     "./BasicBreadcrumb": {
       "import": "./es/BasicBreadcrumb/index.js",
-      "require": "./cjs/BasicBreadcrumb/index.js"
+      "require": "./cjs/BasicBreadcrumb/index.js",
+      "types": "./index.d.ts"
     },
     "./BasicFallback": {
       "import": "./es/BasicFallback/index.js",
-      "require": "./cjs/BasicFallback/index.js"
+      "require": "./cjs/BasicFallback/index.js",
+      "types": "./index.d.ts"
     },
     "./BasicNProgress": {
       "import": "./es/BasicNProgress/index.js",
-      "require": "./cjs/BasicNProgress/index.js"
+      "require": "./cjs/BasicNProgress/index.js",
+      "types": "./index.d.ts"
     },
     "./BasicResult": {
       "import": "./es/BasicResult/index.js",
-      "require": "./cjs/BasicResult/index.js"
+      "require": "./cjs/BasicResult/index.js",
+      "types": "./index.d.ts"
     }
   },
   "files": [
     "es",
     "cjs",
     "css",
-    "types"
+    "index.d.ts"
   ],
   "scripts": {
     "dev": "vite",
