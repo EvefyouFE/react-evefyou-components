@@ -1,10 +1,18 @@
+/*
+ * @Author: EvefyouFE/evef
+ * @Date: 2023-08-20 15:08:34
+ * @FilePath: \react-evefyou-components\components\BasicTable\hooks\usePagination.ts
+ * @Description: 
+ * Everyone is coming to the world i live in, as i am going to the world lives for you. 人人皆往我世界，我为世界中人人。
+ * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
+ */
 import { TablePaginationConfig } from "antd";
 import { isEmpty } from "ramda";
 import { useEffect, useMemo, useState } from "react";
 import { PAGE_SIZE, PAGE_SIZE_OPTIONS } from "../constants";
 import { BasicTableProps } from "../props";
 import { UsePaginationReturnType } from "../types/tablePagination";
-import { formatById } from '@/locale/locale';
+import { formatComponentsById } from '@/locale/locale';
 
 
 export const DEFAULT_PAGINATION_PROPS: TablePaginationConfig = {
@@ -12,7 +20,7 @@ export const DEFAULT_PAGINATION_PROPS: TablePaginationConfig = {
     pageSize: PAGE_SIZE,
     size: 'small',
     defaultPageSize: PAGE_SIZE,
-    showTotal: (total) => formatById('components.table.total', { total }),
+    showTotal: (total) => formatComponentsById('components.table.total', { total }),
     showSizeChanger: true,
     pageSizeOptions: PAGE_SIZE_OPTIONS,
     showQuickJumper: true,

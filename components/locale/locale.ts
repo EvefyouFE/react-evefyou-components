@@ -19,17 +19,17 @@ interface Props extends MessageDescriptor {
 }
 type FormatMessageProps = (descriptor: Props, values?: Values) => string;
 
-export const useLocale = () => {
+export const useComponentsLocale = () => {
   const { formatMessage: _formatMessage } = useIntl();
   const formatMessage: FormatMessageProps = _formatMessage;
-  const formatById = (id: Id, values?: Values) => formatMessage({ id }, values);
+  const formatComponentsById = (id: Id, values?: Values) => formatMessage({ id }, values);
   return {
     formatMessage,
-    formatById
+    formatComponentsById
   };
 };
 
-export function formatMessage({ id, values }: Props): React.ReactNode {
+export function formatComponentsMessage({ id, values }: Props): React.ReactNode {
   return React.createElement(FormattedMessage, {
     id,
     values,
@@ -37,7 +37,7 @@ export function formatMessage({ id, values }: Props): React.ReactNode {
   })
 }
 
-export function formatById(id: Id, values?: Values) {
-  return formatMessage({ id, values })
+export function formatComponentsById(id: Id, values?: Values) {
+  return formatComponentsMessage({ id, values })
 }
 

@@ -1,7 +1,7 @@
 import { Button, Result } from 'antd';
 import { FC } from 'react';
 import { useNavigate } from 'react-router';
-import { formatById } from '@/locale/locale';
+import { formatComponentsById } from '@/locale/locale';
 
 interface ForbiddenResultProps {
   back?: string;
@@ -20,11 +20,11 @@ export const ForbiddenResult: FC<ForbiddenResultProps> = ({
   return (
     <Result
       status="403"
-      title={title ?? formatById('components.403.title')}
-      subTitle={subTitle ?? formatById('components.403.sub.title')}
+      title={title ?? formatComponentsById('components.403.title')}
+      subTitle={subTitle ?? formatComponentsById('components.403.sub.title')}
       extra={
         <Button type="primary" onClick={() => navigate(back ?? '/')}>
-          {btnName ?? formatById('components.common.backLogin')}
+          {btnName ?? formatComponentsById('components.common.backLogin')}
         </Button>
       }
     />

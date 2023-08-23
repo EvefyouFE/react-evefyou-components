@@ -9,7 +9,7 @@
 import { Button, Result } from 'antd';
 import { FC } from 'react';
 import { useNavigate } from 'react-router';
-import { useLocale } from '@/locale/locale';
+import { useComponentsLocale } from '@/locale/locale';
 
 interface ErrorResultProps {
   back?: string;
@@ -24,16 +24,16 @@ export const ErrorResult: FC<ErrorResultProps> = ({
   subTitle,
   btnName,
 }) => {
-  const { formatById } = useLocale();
+  const { formatComponentsById } = useComponentsLocale();
   const navigate = useNavigate();
   return (
     <Result
       status="500"
-      title={title ?? formatById('components.error.title')}
-      subTitle={subTitle ?? formatById('components.error.sub.title')}
+      title={title ?? formatComponentsById('components.error.title')}
+      subTitle={subTitle ?? formatComponentsById('components.error.sub.title')}
       extra={
         <Button type="primary" onClick={() => navigate(back ?? '/')}>
-          {btnName ?? formatById('components.common.backhome')}
+          {btnName ?? formatComponentsById('components.common.backhome')}
         </Button>
       }
     />

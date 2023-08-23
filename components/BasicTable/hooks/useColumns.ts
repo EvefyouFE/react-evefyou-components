@@ -7,7 +7,7 @@ import { BasicTableProps, TableColumnProps, TableColumnPropsWithKey } from "../p
 import { CellFormat } from "../types/table";
 import { GetColumnsParams, UseColumnsReturnType } from "../types/tableColumns";
 import { formatToDate } from "@common/utils/dateUtil";
-import { formatById } from '@/locale/locale';
+import { formatComponentsById } from '@/locale/locale';
 import { uuid } from "@common/utils/generate";
 
 
@@ -29,7 +29,7 @@ function handleIndexColumn<T = any>(
     const defaultProps: TableColumnProps<T> = {
         key: 'index',
         dataIndex: ROW_KEYS[1],
-        title: formatById('components.table.index'),
+        title: formatComponentsById('components.table.index'),
         width: '5rem',
         align: 'center',
         type: 'index',
@@ -63,7 +63,7 @@ function handleActionColumn<T = any>(
         fixed: 'right',
         type: 'action',
         dataIndex: 'action',
-        title: formatById('components.table.column.action'),
+        title: formatComponentsById('components.table.column.action'),
     }
     const actionCloumnIdx = columnsState.findIndex((column) => column.type === 'action');
     if (actionCloumnIdx !== -1) {

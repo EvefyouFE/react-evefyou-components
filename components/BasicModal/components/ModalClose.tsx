@@ -6,7 +6,7 @@ import {
 import { Tooltip } from 'antd';
 import { FC } from 'react';
 import { ModalCloseProps } from '../props';
-import { formatById } from '@/locale/locale';
+import { formatComponentsById } from '@/locale/locale';
 
 export const ModalClose: FC<ModalCloseProps> = ({
   showFullscreen = true,
@@ -25,21 +25,21 @@ export const ModalClose: FC<ModalCloseProps> = ({
       {showFullscreen ? (
         isFullscreen ? (
           <Tooltip
-            title={formatById('components.common.exitFullScreen')}
+            title={formatComponentsById('components.common.exitFullScreen')}
             placement="bottom"
           >
             <FullscreenExitOutlined role="button" onClick={handleFullScreen} />
           </Tooltip>
         ) : (
           <Tooltip
-            title={formatById('components.common.fullScreen')}
+            title={formatComponentsById('components.common.fullScreen')}
             placement="bottom"
           >
             <FullscreenOutlined role="button" onClick={handleFullScreen} />
           </Tooltip>
         )
       ) : undefined}
-      <Tooltip title={formatById('components.common.close')} placement="bottom">
+      <Tooltip title={formatComponentsById('components.common.close')} placement="bottom">
         <CloseOutlined role="button" onClick={onCancel} />
       </Tooltip>
     </div>

@@ -2,17 +2,17 @@ import { RuleObject } from "antd/es/form";
 import { StoreValue } from "antd/es/form/interface";
 import { isNil } from "ramda";
 import { ItemComponentType } from "../types/form";
-import { formatById } from '@/locale/locale';
+import { formatComponentsById } from '@/locale/locale';
 
 /**
  * @description: 生成placeholder
  */
 export function createPlaceholderMessage(component: ItemComponentType) {
     if (component.includes('Input') || component.includes('Complete')) {
-        return formatById('components.common.input.text');
+        return formatComponentsById('components.common.input.text');
     }
     if (component.includes('Picker')) {
-        return formatById('components.common.choose.text');
+        return formatComponentsById('components.common.choose.text');
     }
     if (
         component.includes('Select') ||
@@ -21,7 +21,7 @@ export function createPlaceholderMessage(component: ItemComponentType) {
         component.includes('Radio') ||
         component.includes('Switch')
     ) {
-        return formatById('components.common.choose.text');
+        return formatComponentsById('components.common.choose.text');
     }
     return '';
 }

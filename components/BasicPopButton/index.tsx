@@ -9,15 +9,15 @@
 import { Popconfirm } from 'antd';
 import { FC } from 'react';
 import { BasicButton } from '../BasicButton';
-import { formatById } from '@/locale/locale';
+import { formatComponentsById } from '@/locale/locale';
 import { BasicPopButtonProps } from '../BasicPopButton/props';
 
 export const BasicPopButton: FC<BasicPopButtonProps> = (props) => {
   const { popconfirmProps, color, disabled, ...rest } = props;
 
   const popconfirmPropsMemo = popconfirmProps && {
-    okText: formatById('components.button.okText'),
-    cancelText: formatById('components.button.cancelText'),
+    okText: formatComponentsById('components.button.okText'),
+    cancelText: formatComponentsById('components.button.cancelText'),
     ...popconfirmProps,
   };
 

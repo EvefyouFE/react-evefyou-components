@@ -8,7 +8,7 @@ import { itemComponentMap } from '../itemComponentMap';
 import { ItemInnerProps } from '../props';
 import { createPlaceholderMessage, validator } from '../utils/helper';
 import { BasicHelp } from '@/BasicHelp';
-import { formatById } from '@/locale/locale';
+import { formatComponentsById } from '@/locale/locale';
 import { Nullable, Recordable } from "../../types";
 
 function renderLabelHelpMessage({
@@ -225,7 +225,7 @@ export function useRenderItemFn(props: Partial<ItemInnerProps>) {
     );
     const ruleWithMax = ruls[characterInx] as RuleObject;
     if (characterInx !== -1 && !ruleWithMax.validator) {
-      ruleWithMax.message ??= formatById('components.form.max.tip', {
+      ruleWithMax.message ??= formatComponentsById('components.form.max.tip', {
         max: ruleWithMax.max,
       }) as string;
     }
