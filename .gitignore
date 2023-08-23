@@ -14,7 +14,6 @@ dist-ssr
 *.local
 es
 css
-./types
 cjs
 pnpm-lock.yaml
 manifest.json

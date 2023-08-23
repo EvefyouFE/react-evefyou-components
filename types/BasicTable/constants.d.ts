@@ -1,0 +1,11 @@
+import { TableSetting } from "./types/table";
+export declare const ROW_KEYS: string[];
+export declare const PAGE_SIZE_OPTIONS: `${number}`[];
+export declare const PAGE_SIZE: number;
+export declare const FETCH_SETTING: import("..").ComponentTableFetchSetting;
+export declare const DEFAULT_SIZE: string;
+export declare const DEFAULT_SORT_FN: import("..").SortFn;
+export declare const DEFAULT_FILTER_FN: import("..").FilterFn;
+export declare const DEFAULT_ALIGN = "center";
+export declare const DEFAULT_TABLE_SETTING: TableSetting;
+export declare const DEFAULT_TABLE_INNER_PROPS: any;

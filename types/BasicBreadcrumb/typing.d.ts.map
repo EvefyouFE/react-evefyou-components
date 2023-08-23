@@ -1,0 +1,1 @@
+{"version":3,"file":"typing.d.ts","sourceRoot":"","sources":["../../components/BasicBreadcrumb/typing.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,kBAAkB,EAAE,MAAM,+BAA+B,CAAC;AACnE,OAAO,EAAE,SAAS,EAAE,MAAM,sBAAsB,CAAC;AAEjD,MAAM,MAAM,oBAAoB,GAAG,CAAC,IAAI,CAAC,EAAE,SAAS,KAAK,kBAAkB,CAAC;AAE5E,MAAM,WAAW,gBAAgB;IAC/B,KAAK,EAAE,oBAAoB,CAAC;CAC7B"}
