@@ -1,105 +1,83 @@
 {
   "name": "react-evefyou-components",
-  "version": "1.0.13",
+  "version": "1.0.15",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
   "module": "./es/index.js",
-  "types": "./types/index.d.ts",
+  "types": "./index.d.ts",
   "exports": {
     ".": {
       "import": "./es/index.js",
-      "require": "./cjs/index.js",
-      "types": "./types/index.d.ts"
-    },
-    "./windi.css": {
-      "import": "./css/windi.css",
-      "require": "./css/windi.css"
+      "require": "./cjs/index.js"
     },
     "./locale/zh_CN": {
-      "import": "./es/locale/zh_CN.js",
-      "require": "./cjs/locale/zh_CN.js",
-      "types": "./types/locale/zh-cn/index.d.ts"
+      "import": "./es/locale/zh_CN/index.js",
+      "require": "./cjs/locale/zh_CN/index.js"
     },
     "./locale/en_US": {
-      "import": "./es/locale/en_US.js",
-      "require": "./cjs/locale/en_US.js",
-      "types": "./types/locale/en-us/index.d.ts"
+      "import": "./es/locale/en_US/index.js",
+      "require": "./cjs/locale/en_US/index.js"
     },
     "./BasicButton": {
       "import": "./es/BasicButton/index.js",
-      "require": "./cjs/BasicButton/index.js",
-      "types": "./types/index.d.ts"
+      "require": "./cjs/BasicButton/index.js"
     },
     "./BasicDropdown": {
       "import": "./es/BasicDropdown/index.js",
-      "require": "./cjs/BasicDropdown/index.js",
-      "types": "./types/index.d.ts"
+      "require": "./cjs/BasicDropdown/index.js"
     },
     "./BasicForm": {
       "import": "./es/BasicForm/index.js",
-      "require": "./cjs/BasicForm/index.js",
-      "types": "./types/index.d.ts"
+      "require": "./cjs/BasicForm/index.js"
     },
     "./BasicHelp": {
       "import": "./es/BasicHelp/index.js",
-      "require": "./cjs/BasicHelp/index.js",
-      "types": "./types/index.d.ts"
+      "require": "./cjs/BasicHelp/index.js"
     },
     "./BasicIcon": {
       "import": "./es/BasicIcon/index.js",
-      "require": "./cjs/BasicIcon/index.js",
-      "types": "./types/index.d.ts"
+      "require": "./cjs/BasicIcon/index.js"
     },
     "./BasicMenu": {
       "import": "./es/BasicMenu/index.js",
-      "require": "./cjs/BasicMenu/index.js",
-      "types": "./types/index.d.ts"
+      "require": "./cjs/BasicMenu/index.js"
     },
     "./BasicModal": {
       "import": "./es/BasicModal/index.js",
-      "require": "./cjs/BasicModal/index.js",
-      "types": "./types/index.d.ts"
+      "require": "./cjs/BasicModal/index.js"
     },
     "./BasicPopButton": {
       "import": "./es/BasicPopButton/index.js",
-      "require": "./cjs/BasicPopButton/index.js",
-      "types": "./types/index.d.ts"
+      "require": "./cjs/BasicPopButton/index.js"
     },
     "./BasicScroll": {
       "import": "./es/BasicScroll/index.js",
-      "require": "./cjs/BasicScroll/index.js",
-      "types": "./types/index.d.ts"
+      "require": "./cjs/BasicScroll/index.js"
     },
     "./BasicTable": {
       "import": "./es/BasicTable/index.js",
-      "require": "./cjs/BasicTable/index.js",
-      "types": "./types/index.d.ts"
+      "require": "./cjs/BasicTable/index.js"
     },
     "./BasicTitle": {
       "import": "./es/BasicTitle/index.js",
-      "require": "./cjs/BasicTitle/index.js",
-      "types": "./types/index.d.ts"
+      "require": "./cjs/BasicTitle/index.js"
     },
     "./BasicBreadcrumb": {
       "import": "./es/BasicBreadcrumb/index.js",
-      "require": "./cjs/BasicBreadcrumb/index.js",
-      "types": "./types/index.d.ts"
+      "require": "./cjs/BasicBreadcrumb/index.js"
     },
     "./BasicFallback": {
       "import": "./es/BasicFallback/index.js",
-      "require": "./cjs/BasicFallback/index.js",
-      "types": "./types/index.d.ts"
+      "require": "./cjs/BasicFallback/index.js"
     },
     "./BasicNProgress": {
       "import": "./es/BasicNProgress/index.js",
-      "require": "./cjs/BasicNProgress/index.js",
-      "types": "./types/index.d.ts"
+      "require": "./cjs/BasicNProgress/index.js"
     },
     "./BasicResult": {
       "import": "./es/BasicResult/index.js",
-      "require": "./cjs/BasicResult/index.js",
-      "types": "./types/index.d.ts"
+      "require": "./cjs/BasicResult/index.js"
     }
   },
   "files": [

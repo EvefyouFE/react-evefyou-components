@@ -25,26 +25,17 @@ const regexOfPackages = externalPackages
   .map(packageName => new RegExp(`^${packageName}(\\/.*)?`));
 
 const entries = {
-  'index': pathResolve('components/index.ts'),
-  'zh_CN': pathResolve('components/locale/zh-cn'),
-  'en_US': pathResolve('components/locale/en-us'),
-  'BasicButton': pathResolve('components/BasicButton'),
-  'BasicPopButton': pathResolve('components/BasicPopButton'),
-  'BasicDropdown': pathResolve('components/BasicDropdown'),
-  'BasicForm': pathResolve('components/BasicForm'),
-  'BasicHelp': pathResolve('components/BasicHelp'),
-  'BasicIcon': pathResolve('components/BasicIcon'),
-  'BasicMenu': pathResolve('components/BasicMenu'),
-  'BasicModal': pathResolve('components/BasicModal'),
-  'BasicScroll': pathResolve('components/BasicScroll'),
-  'BasicTable': pathResolve('components/BasicTable'),
-  'BasicTitle': pathResolve('components/BasicTitle'),
-  'BasicBreadcrumb': pathResolve('components/BasicBreadcrumb'),
-  'BasicFallback': pathResolve('components/BasicFallback'),
-  'BasicNProgress': pathResolve('components/BasicNProgress'),
-  'BasicResult': pathResolve('components/BasicResult'),
+  'index': pathResolve('components/index.ts')
 }
-const otherEntryFile = Object.keys(entries).filter(e => e !== 'index')
+
+const locales = Object.keys(pkg.exports)
+  .filter(e => e.includes('locale'))
+  .map(e => e.split('./')[1])
+const components = Object.keys(pkg.exports)
+  .filter(e => e !== '.' && !e.includes('locale'))
+  .map(e => e.split('./')[1])
+
+console.log('components', components)
 
 export default defineConfig({
   plugins: [
@@ -57,30 +48,7 @@ export default defineConfig({
     }),
     tsconfigPaths(),
     dts({
-      insertTypesEntry: true,
-      // rollupTypes: true,
-      outDir: ['types'],
-      beforeWriteFile: (filePath, content) => {
-        //   console.log('beforeWriteFile', filePath)
-        const entryDFile = otherEntryFile
-          .map(e => e.concat('.d.ts'))
-          .find(e => filePath.includes(e))
-        //   entryDFile && console.log('beforeWriteFile entryDFile', entryDFile)
-        // const newPath = pipe(
-        //   split('/'),
-        //   // eslint-disable-next-line react-hooks/rules-of-hooks
-        //   useWith(
-        //     (arr: string[]) => arr.map((e, idx) => idx === arr.length - 1 ? e.split('.d.ts')[0].concat('/index.d.ts') : e),
-        //     [identity]
-        //   ),
-        //   join('/'),
-        // )(filePath)
-        // console.log('newPath', newPath)
-        // return { filePath:entryDFile?newPath:filePath, content }
-        // return {filePath,content: entryDFile? `import * ''`:''}
-        return entryDFile ? false : { filePath, content }
-        //   return { filePath, content }
-      },
+      rollupTypes: true,
     }),
     libInjectCss({
       build: {
@@ -94,21 +62,26 @@ export default defineConfig({
       fileName: (format, entryName) => {
         return entryName === 'index'
           ? `${format}/index.js`
-          : entryName.includes('_')
-            ? `${format}/locale/${entryName}.js`
-            : `${format}/[name]/index.js`
+          : `${format}/[name]/index.js`
       },
       name: 'react-evefyou-components',
       formats: ["es", "cjs"],
       rollupOptions: {
         output: {
+          manualChunks: (id) => {
+            let en = components.find(e => id.includes(e))
+            en ??= locales.find(l => id.includes(l.split('_')[0]))
+            console.log('manualChunks', en, id)
+            return en
+          },
           chunkFileNames: (chunkInfo) => {
-            // console.log('chunkInfo', chunkInfo)
-            return otherEntryFile.reduce(
-              (acc, cur) => !chunkInfo.isEntry && chunkInfo.moduleIds.findIndex(s => s.includes(cur)) !== -1
-                ? `[format]/${cur}/other.js` : acc,
-              '[format]/_common/[name].js'
-            )
+            console.log('chunkInfo', chunkInfo.name)
+            return '[format]/[name]/index.js'
+            // return otherEntryFile.reduce(
+            //   (acc, cur) => !chunkInfo.isEntry && chunkInfo.moduleIds.findIndex(s => s.includes(cur)) !== -1
+            //     ? `[format]/${cur}/other.js` : acc,
+            //   '[format]/_common/[name].js'
+            // )
           },
           assetFileNames: '[ext]/[name].[ext]',
         },

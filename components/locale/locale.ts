@@ -10,6 +10,7 @@ import React from 'react';
 import enUS from './en-us';
 import { FormattedMessage, MessageDescriptor, PrimitiveType, useIntl } from 'react-intl';
 
+
 export type Id = keyof typeof enUS;
 type FormatXMLElementFn<T, R = string | T | (string | T)[]> = (parts: Array<string | T>) => R;
 export type Values = Record<string, React.ReactNode | PrimitiveType | FormatXMLElementFn<React.ReactNode, React.ReactNode>>;

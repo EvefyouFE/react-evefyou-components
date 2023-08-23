@@ -58,3 +58,6 @@ export * from './_common/utils'
 export * from './_common/config'
 export * from './_common/hooks/useDesign'
 export * from './locale/locale'
+
+export { default as enUS } from '@/locale/en-us'
+export { default as zhCN } from '@/locale/zh-cn'
