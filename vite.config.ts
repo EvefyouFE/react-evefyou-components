@@ -97,7 +97,7 @@ export default defineConfig({
           },
           assetFileNames: '[ext]/[name].[ext]',
         },
-        external: [...regexOfPackages, './components/_common/utils/generate.ts']
+        external: regexOfPackages
       }
     })
   ],

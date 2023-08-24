@@ -11,26 +11,26 @@ import enUS from './en_US';
 import { FormattedMessage, MessageDescriptor, PrimitiveType, useIntl } from 'react-intl';
 
 
-export type Id = keyof typeof enUS;
-type FormatXMLElementFn<T, R = string | T | (string | T)[]> = (parts: Array<string | T>) => R;
-export type Values = Record<string, React.ReactNode | PrimitiveType | FormatXMLElementFn<React.ReactNode, React.ReactNode>>;
-interface Props extends MessageDescriptor {
-  id: Id;
-  values?: Values;
+export type ComponentsId = keyof typeof enUS;
+type ComponentsFormatXMLElementFn<T, R = string | T | (string | T)[]> = (parts: Array<string | T>) => R;
+export type ComponentsValues = Record<string, React.ReactNode | PrimitiveType | ComponentsFormatXMLElementFn<React.ReactNode, React.ReactNode>>;
+interface ComponentsProps extends MessageDescriptor {
+  id: ComponentsId;
+  values?: ComponentsValues;
 }
-type FormatMessageProps = (descriptor: Props, values?: Values) => string;
+type FormatMessageProps = (descriptor: ComponentsProps, values?: ComponentsValues) => string;
 
 export const useComponentsLocale = () => {
   const { formatMessage: _formatMessage } = useIntl();
   const formatMessage: FormatMessageProps = _formatMessage;
-  const formatComponentsById = (id: Id, values?: Values) => formatMessage({ id }, values);
+  const formatComponentsById = (id: ComponentsId, values?: ComponentsValues) => formatMessage({ id }, values);
   return {
     formatMessage,
     formatComponentsById
   };
 };
 
-export function formatComponentsMessage({ id, values }: Props): React.ReactNode {
+export function formatComponentsMessage({ id, values }: ComponentsProps): React.ReactNode {
   return React.createElement(FormattedMessage, {
     id,
     values,
@@ -38,7 +38,7 @@ export function formatComponentsMessage({ id, values }: Props): React.ReactNode 
   })
 }
 
-export function formatComponentsById(id: Id, values?: Values) {
+export function formatComponentsById(id: ComponentsId, values?: ComponentsValues) {
   return formatComponentsMessage({ id, values })
 }
 

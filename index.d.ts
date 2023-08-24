@@ -276,6 +276,17 @@ export declare interface ComponentSetting {
     table: ComponentTableSetting;
 }
 
+declare type ComponentsFormatXMLElementFn<T, R = string | T | (string | T)[]> = (parts: Array<string | T>) => R;
+
+export declare type ComponentsId = keyof typeof _default;
+
+declare interface ComponentsProps extends MessageDescriptor {
+    id: ComponentsId;
+    values?: ComponentsValues;
+}
+
+export declare type ComponentsValues = Record<string, React_2.ReactNode | PrimitiveType | ComponentsFormatXMLElementFn<React_2.ReactNode, React_2.ReactNode>>;
+
 export declare interface ComponentTableFetchSetting {
     pageField: string;
     sizeField: string;
@@ -347,17 +358,15 @@ export declare enum FallbackTypeEnum {
 
 export declare type FilterFn = (data: Recordable) => Recordable;
 
-export declare function formatComponentsById(id: Id, values?: Values): React_2.ReactNode;
+export declare function formatComponentsById(id: ComponentsId, values?: ComponentsValues): React_2.ReactNode;
 
-export declare function formatComponentsMessage({ id, values }: Props): React_2.ReactNode;
+export declare function formatComponentsMessage({ id, values }: ComponentsProps): React_2.ReactNode;
 
-declare type FormatMessageProps = (descriptor: Props, values?: Values) => string;
+declare type FormatMessageProps = (descriptor: ComponentsProps, values?: ComponentsValues) => string;
 
 export declare function formatToDate(date?: moment_2.MomentInput, format?: string): string;
 
 export declare function formatToDateTime(date?: moment_2.MomentInput, format?: string): string;
-
-declare type FormatXMLElementFn<T, R = string | T | (string | T)[]> = (parts: Array<string | T>) => R;
 
 export declare type FormHookMethods = UseFormPropsMethods;
 
@@ -398,8 +407,6 @@ declare interface IconProps extends Partial<CustomIconComponentProps> {
     className?: string;
     onClick?: () => void;
 }
-
-export declare type Id = keyof typeof _default;
 
 export declare type IndexColumnProps<T = any> = TableColumnProps<T>;
 
@@ -530,11 +537,6 @@ declare interface Option_2 {
 }
 export { Option_2 as Option }
 
-declare interface Props extends MessageDescriptor {
-    id: Id;
-    values?: Values;
-}
-
 export declare type PropsWithChildrenCls<P = unknown> = P & {
     children?: React.ReactNode | undefined;
     className?: string | undefined;
@@ -660,7 +662,7 @@ declare interface UseColumnsMethods<T = any> {
 
 export declare const useComponentsLocale: () => {
     formatMessage: FormatMessageProps;
-    formatComponentsById: (id: Id, values?: Values) => string;
+    formatComponentsById: (id: ComponentsId, values?: ComponentsValues) => string;
 };
 
 declare interface UseDataSourceMethods<T = any> {
@@ -739,8 +741,6 @@ export declare interface UseTablePropsSetMethods<T = any> extends UsePropsMethod
 }
 
 export declare function uuid(): string;
-
-export declare type Values = Record<string, React_2.ReactNode | PrimitiveType | FormatXMLElementFn<React_2.ReactNode, React_2.ReactNode>>;
 
 export declare interface ViewportOffsetResult {
     left: number;

@@ -51,11 +51,11 @@ dependencies:
     specifier: '>=4.4.5'
     version: 4.4.5(react-dom@18.2.0)(react@18.2.0)
   react-evefyou-hooks:
-    specifier: '>=1.0.7'
-    version: 1.0.7(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react@18.2.0)(recoil@0.7.7)
+    specifier: '>=1.0.9'
+    version: 1.0.9(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react@18.2.0)(recoil@0.7.7)
   react-evefyou-router:
-    specifier: '>=1.0.3'
-    version: 1.0.3(ramda@0.29.0)(react-dom@18.2.0)(react-router-dom@6.10.0)(react-router@6.10.0)(react@18.2.0)
+    specifier: '>=1.0.7'
+    version: 1.0.7(ramda@0.29.0)(react-dom@18.2.0)(react-router-dom@6.10.0)(react-router@6.10.0)(react@18.2.0)
   react-intl:
     specifier: '>=6.4.4'
     version: 6.4.4(react@18.2.0)(typescript@5.1.6)
@@ -4667,8 +4667,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /react-evefyou-hooks@1.0.7(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react@18.2.0)(recoil@0.7.7):
-    resolution: {integrity: sha512-wyiUkscKWyVSj5uoenseOcZwbqvrr+tDDrH5Z3lpRUSkJc5WfQ0Z6luQb+bLj3Y8/O8Epr2Ledkn7Vvu+0A7gA==}
+  /react-evefyou-hooks@1.0.9(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react@18.2.0)(recoil@0.7.7):
+    resolution: {integrity: sha512-av5+AXAgNKzkFWI8voGyhcEI3kJFSm1a9C0zvTUXh8sCkqmn7pwFyfW83acmROLrqDua4zd/2/0dX57UKO7KMw==}
     peerDependencies:
       ahooks: '>=3.7.6'
       ramda: '>=0.29.0'
@@ -4683,8 +4683,8 @@ packages:
       recoil: 0.7.7(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
-  /react-evefyou-router@1.0.3(ramda@0.29.0)(react-dom@18.2.0)(react-router-dom@6.10.0)(react-router@6.10.0)(react@18.2.0):
-    resolution: {integrity: sha512-VrgeryijTxFOYPVfFOVMViMZons65+T1LjEIG7queIFfXCBweSV/XmhPwUz5vU6LpKRTubRtKbGZ/2dYk+sPLg==}
+  /react-evefyou-router@1.0.7(ramda@0.29.0)(react-dom@18.2.0)(react-router-dom@6.10.0)(react-router@6.10.0)(react@18.2.0):
+    resolution: {integrity: sha512-Odkz9PMbChfJByAn6Sd5qto29gKzxBixq9OLGcEKuFXKVm5akF0POdGwUHXX9KCEDUgQ3YE918RbM2YbJOjptA==}
     peerDependencies:
       ramda: '>=0.29.0'
       react: '>=18.2.0'
