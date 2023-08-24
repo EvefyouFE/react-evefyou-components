@@ -7,7 +7,7 @@
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
  */
 import React from 'react';
-import enUS from './en-us';
+import enUS from './en_US';
 import { FormattedMessage, MessageDescriptor, PrimitiveType, useIntl } from 'react-intl';
 
 

@@ -1,6 +1,6 @@
 {
   "name": "react-evefyou-components",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
@@ -15,12 +15,12 @@
     "./locale/zh_CN": {
       "import": "./es/locale/zh_CN/index.js",
       "require": "./cjs/locale/zh_CN/index.js",
-      "types": "./index.d.ts"
+      "types": "./locale/zh_CN.d.ts"
     },
     "./locale/en_US": {
       "import": "./es/locale/en_US/index.js",
       "require": "./cjs/locale/en_US/index.js",
-      "types": "./index.d.ts"
+      "types": "./locale/zh_CN.d.ts"
     },
     "./BasicButton": {
       "import": "./es/BasicButton/index.js",
@@ -102,7 +102,8 @@
     "es",
     "cjs",
     "css",
-    "index.d.ts"
+    "index.d.ts",
+    "locale"
   ],
   "scripts": {
     "dev": "vite",
@@ -110,7 +111,7 @@
     "build:tsc": "tsc",
     "clean": "rimraf node_modules",
     "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
-    "clean:build": "rimraf es && rimraf cjs && rimraf css && rimraf dist && rimraf types",
+    "clean:build": "rimraf es && rimraf cjs && rimraf css && rimraf dist && rimraf locale",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

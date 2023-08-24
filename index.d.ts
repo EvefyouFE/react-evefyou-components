@@ -294,17 +294,7 @@ export declare interface ComponentTableSetting {
 
 export declare const dateUtil: typeof moment_2;
 
-export declare const DEFAULT_COMPONENT_SETTING: ComponentSetting;
-
-declare interface DropMenuItem extends MenuItemType {
-    popconfirm?: PopconfirmProps;
-    icon?: string;
-    key: React_2.Key;
-    disabled?: boolean;
-    divider?: boolean;
-}
-
-export declare const enUS: {
+declare const _default: {
     'components.common.search': string;
     'components.common.refresh': string;
     'components.common.reset': string;
@@ -339,6 +329,16 @@ export declare const enUS: {
     'components.403.title': string;
     'components.403.sub.title': string;
 };
+
+export declare const DEFAULT_COMPONENT_SETTING: ComponentSetting;
+
+declare interface DropMenuItem extends MenuItemType {
+    popconfirm?: PopconfirmProps;
+    icon?: string;
+    key: React_2.Key;
+    disabled?: boolean;
+    divider?: boolean;
+}
 
 export declare enum FallbackTypeEnum {
     errorResult = "errorResult",
@@ -399,7 +399,7 @@ declare interface IconProps extends Partial<CustomIconComponentProps> {
     onClick?: () => void;
 }
 
-export declare type Id = keyof typeof enUS;
+export declare type Id = keyof typeof _default;
 
 export declare type IndexColumnProps<T = any> = TableColumnProps<T>;
 
@@ -750,41 +750,5 @@ export declare interface ViewportOffsetResult {
     rightIncludeBody: number;
     bottomIncludeBody: number;
 }
-
-export declare const zhCN: {
-    'components.common.search': string;
-    'components.common.refresh': string;
-    'components.common.reset': string;
-    'components.common.fullScreen': string;
-    'components.common.exitFullScreen': string;
-    'components.common.close': string;
-    'components.common.input.text': string;
-    'components.common.choose.text': string;
-    'components.common.backhome': string;
-    'components.common.backLogin': string;
-    'components.button.okText': string;
-    'components.button.cancelText': string;
-    'components.form.max.tip': string;
-    'components.table.total': string;
-    'components.table.index': string;
-    'components.table.column.action': string;
-    'components.table.setting.columns': string;
-    'components.table.setting.size': string;
-    'components.table.setting.size.default': string;
-    'components.table.setting.size.middle': string;
-    'components.table.setting.size.small': string;
-    'components.table.setting.columns.showAll': string;
-    'components.table.setting.columns.showIndex': string;
-    'components.table.setting.columns.showSelect': string;
-    'components.table.setting.columns.fixedLeft': string;
-    'components.table.setting.columns.fixedRight': string;
-    'components.fallback.loading.tip': string;
-    'components.error.title': string;
-    'components.error.sub.title': string;
-    'components.404.title': string;
-    'components.404.sub.title': string;
-    'components.403.title': string;
-    'components.403.sub.title': string;
-};
 
 export { }
