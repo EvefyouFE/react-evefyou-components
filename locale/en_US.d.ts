@@ -1,4 +1,5 @@
 declare const _default: {
+    'components.common.text.ok': string;
     'components.common.search': string;
     'components.common.refresh': string;
     'components.common.reset': string;

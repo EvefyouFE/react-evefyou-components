@@ -1,6 +1,6 @@
 {
   "name": "react-evefyou-components",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
@@ -96,6 +96,11 @@
       "import": "./es/BasicResult/index.js",
       "require": "./cjs/BasicResult/index.js",
       "types": "./index.d.ts"
+    },
+    "./MessageHelper": {
+      "import": "./es/MessageHelper/index.js",
+      "require": "./cjs/MessageHelper/index.js",
+      "types": "./index.d.ts"
     }
   },
   "files": [
@@ -147,6 +152,7 @@
     "react-router": ">=6.10.0",
     "react-router-dom": ">=6.10.0",
     "react-draggable": ">=4.4.5",
+    "react-evefyou-hooks": ">=1.0.10",
     "react-evefyou-router": ">=1.0.7",
     "react-intl": ">=6.4.4",
     "nprogress": ">=0.2.0",

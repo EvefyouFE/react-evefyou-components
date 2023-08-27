@@ -1,13 +1,14 @@
 /*
  * @Author: EvefyouFE
  * @Date: 2023-08-16 14:28:09
- * @FilePath: \react-evefyou-components\components\locale\zh-cn\index.ts
+ * @FilePath: \react-evefyou-components\components\locale\zh_CN.ts
  * @Description: 
  * Everyone is coming to the world i live in, as i am going to the world lives for you. 人人皆往我世界，我为世界中人人。
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
  */
 
 export default {
+  'components.common.text.ok': '确认',
   'components.common.search': '搜索',
   'components.common.refresh': '刷新',
   'components.common.reset': '重置',

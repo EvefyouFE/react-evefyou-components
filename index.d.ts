@@ -23,11 +23,15 @@ import { MemoExoticComponent } from 'react';
 import { MenuItemType } from 'antd/es/menu/hooks/useItems';
 import { MenuProps } from 'antd';
 import { MenuTreeList } from 'react-evefyou-router';
+import { message } from 'antd';
 import { MessageDescriptor } from 'react-intl';
+import { ModalFunc } from 'antd/es/modal/confirm';
+import { ModalFuncProps } from 'antd';
 import { ModalProps } from 'antd';
 import { default as moment_2 } from 'moment';
 import { MouseEventHandler } from 'react';
 import { NamedExoticComponent } from 'react';
+import { notification } from 'antd';
 import { PopconfirmProps } from 'antd';
 import { PrimitiveType } from 'react-intl';
 import { PropsWithChildren } from 'react';
@@ -303,9 +307,43 @@ export declare interface ComponentTableSetting {
     filterFn: FilterFn;
 }
 
+export declare interface ConfirmOptions {
+    info: ModalFunc;
+    success: ModalFunc;
+    error: ModalFunc;
+    warn: ModalFunc;
+    warning: ModalFunc;
+}
+
+/**
+ * @description: Create confirmation box
+ */
+declare function createConfirm(options: ModalOptionsEx): ConfirmOptions;
+
+declare function createErrorModal(options: ModalOptionsPartial): {
+    destroy: () => void;
+    update: (configUpdate: ModalFuncProps | ((prevConfig: ModalFuncProps) => ModalFuncProps)) => void;
+};
+
+declare function createInfoModal(options: ModalOptionsPartial): {
+    destroy: () => void;
+    update: (configUpdate: ModalFuncProps | ((prevConfig: ModalFuncProps) => ModalFuncProps)) => void;
+};
+
+declare function createSuccessModal(options: ModalOptionsPartial): {
+    destroy: () => void;
+    update: (configUpdate: ModalFuncProps | ((prevConfig: ModalFuncProps) => ModalFuncProps)) => void;
+};
+
+declare function createWarningModal(options: ModalOptionsPartial): {
+    destroy: () => void;
+    update: (configUpdate: ModalFuncProps | ((prevConfig: ModalFuncProps) => ModalFuncProps)) => void;
+};
+
 export declare const dateUtil: typeof moment_2;
 
 declare const _default: {
+    'components.common.text.ok': string;
     'components.common.search': string;
     'components.common.refresh': string;
     'components.common.reset': string;
@@ -408,6 +446,8 @@ declare interface IconProps extends Partial<CustomIconComponentProps> {
     onClick?: () => void;
 }
 
+export declare type IconType = 'success' | 'info' | 'error' | 'warning';
+
 export declare type IndexColumnProps<T = any> = TableColumnProps<T>;
 
 export declare interface ItemComponentParams {
@@ -445,6 +485,16 @@ export declare const MenuItemLabel: FC<MenuItemLabelProps>;
 export declare interface MenuItemLabelProps {
     title: string;
     to?: string;
+}
+
+export declare class MessageHelper {
+    static createMessage: typeof message;
+    static notification: typeof notification;
+    static createConfirm: typeof createConfirm;
+    static createSuccessModal: typeof createSuccessModal;
+    static createErrorModal: typeof createErrorModal;
+    static createInfoModal: typeof createInfoModal;
+    static createWarningModal: typeof createWarningModal;
 }
 
 export declare interface ModalCloseProps {
@@ -513,6 +563,12 @@ export declare interface ModalInnerProps {
 export declare interface ModalInstance extends BaseInstance<BasicModalProps>, Pick<ModalHookMethods, 'init' | 'openModal' | 'closeModal' | 'openOkLoading' | 'closeOkLoading'> {
 }
 
+export declare interface ModalOptionsEx extends Omit<ModalFuncProps, 'iconType'> {
+    iconType: 'warning' | 'success' | 'error' | 'info';
+}
+
+export declare type ModalOptionsPartial = Partial<ModalOptionsEx> & Pick<ModalOptionsEx, 'content'>;
+
 export declare const ModalProvider: FC<ModalContextProps>;
 
 export declare interface ModalWrapperInstance {
@@ -527,6 +583,8 @@ export declare interface ModalWrapperProps extends PropsWithChildren {
     footerHeightOffset?: number;
     isFullScreen?: boolean;
 }
+
+export declare type NotificationPlacement = 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
 
 export declare type Nullable<T> = T | null;
 

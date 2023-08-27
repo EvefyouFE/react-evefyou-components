@@ -51,8 +51,8 @@ dependencies:
     specifier: '>=4.4.5'
     version: 4.4.5(react-dom@18.2.0)(react@18.2.0)
   react-evefyou-hooks:
-    specifier: '>=1.0.9'
-    version: 1.0.9(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react@18.2.0)(recoil@0.7.7)
+    specifier: '>=1.0.10'
+    version: 1.0.10(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react@18.2.0)(recoil@0.7.7)
   react-evefyou-router:
     specifier: '>=1.0.7'
     version: 1.0.7(ramda@0.29.0)(react-dom@18.2.0)(react-router-dom@6.10.0)(react-router@6.10.0)(react@18.2.0)
@@ -4667,8 +4667,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /react-evefyou-hooks@1.0.9(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react@18.2.0)(recoil@0.7.7):
-    resolution: {integrity: sha512-av5+AXAgNKzkFWI8voGyhcEI3kJFSm1a9C0zvTUXh8sCkqmn7pwFyfW83acmROLrqDua4zd/2/0dX57UKO7KMw==}
+  /react-evefyou-hooks@1.0.10(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react@18.2.0)(recoil@0.7.7):
+    resolution: {integrity: sha512-of1sLwuav7ZTFonZtxhbFkwqpp0DMN2sJQpECUXuED1SZN8go3pg+Juvrrn5b0NYjC+8K+PdJQCPal5+Qrp+Ig==}
     peerDependencies:
       ahooks: '>=3.7.6'
       ramda: '>=0.29.0'
