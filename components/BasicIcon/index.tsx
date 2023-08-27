@@ -38,3 +38,5 @@ export const BasicIcon: FC<IconProps> = ({ icon, size, iconifyInline, ...rest })
       return null;
   }
 }
+
+export default BasicIcon

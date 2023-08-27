@@ -21,3 +21,5 @@ export const BasicFallback: FC<BasicFallbackProps> = ({
       return <BasicResult code={500} />
   }
 };
+
+export default BasicFallback

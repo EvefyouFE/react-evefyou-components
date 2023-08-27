@@ -122,3 +122,5 @@ export const BasicForm = React.memo(
 ) as <T = any>(
   p: PropsWithChildrenCls<BasicFormProps> & { ref?: Ref<BasicFormInstance<T>> },
 ) => ReactElement;
+
+export default BasicForm

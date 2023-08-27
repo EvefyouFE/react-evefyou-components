@@ -133,3 +133,5 @@ export const BasicModal = React.memo(
   }),
   deepCompareObj,
 );
+
+export default BasicModal;

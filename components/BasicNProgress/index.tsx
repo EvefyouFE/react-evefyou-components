@@ -26,3 +26,5 @@ export const BasicNProgress = ({
   }, []);
   return children;
 };
+
+export default BasicNProgress;

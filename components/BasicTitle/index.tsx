@@ -42,3 +42,5 @@ export const BasicTitle: FC<PropsWithChildrenCls<BasicTitleProps>> = ({
     </span>
   );
 };
+
+export default BasicTitle;

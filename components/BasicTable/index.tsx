@@ -168,3 +168,5 @@ export const BasicTable = React.memo(
 ) as <T = any>(
   p: BasicTableProps<T> & { ref?: Ref<BasicTableInstance> },
 ) => ReactElement;
+
+export default BasicTable;

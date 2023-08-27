@@ -247,3 +247,6 @@ export const BasicScroll = forwardRef<
 });
 
 BasicScroll.displayName = 'BasicScroll';
+
+
+export default BasicScroll;

@@ -43,3 +43,5 @@ export const BasicButton: FC<PropsWithChildren<ButtonProps>> = ({
     </Button>
   );
 };
+
+export default BasicButton

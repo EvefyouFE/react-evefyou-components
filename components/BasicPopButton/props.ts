@@ -6,5 +6,3 @@ export interface BasicPopButtonProps extends Partial<ButtonProps> {
     popconfirmProps?: PopconfirmProps;
 }
 
-
-

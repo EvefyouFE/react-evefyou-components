@@ -103,3 +103,5 @@ export class MessageHelper {
   static createInfoModal = createInfoModal;
   static createWarningModal = createWarningModal;
 }
+
+export default MessageHelper;

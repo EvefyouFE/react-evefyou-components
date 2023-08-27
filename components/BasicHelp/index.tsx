@@ -61,3 +61,5 @@ export const BasicHelp: React.FC<PropsWithChildren<BasicHelpProps>> = ({
     </Tooltip>
   );
 };
+
+export default BasicHelp

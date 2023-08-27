@@ -35,3 +35,6 @@ export const BasicPopButton: FC<BasicPopButtonProps> = (props) => {
     <BasicButton {...rest} />
   );
 };
+
+
+export default BasicPopButton;
