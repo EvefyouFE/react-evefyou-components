@@ -15,7 +15,7 @@ import { BasicBreadcrumbProps } from "./props";
 import { CrumbRouteHandle } from "./typing";
 import classNames from "classnames";
 
- const BasicBreadcrumb: FC<BasicBreadcrumbProps> = ({ ...rest }) => {
+export const BasicBreadcrumb: FC<BasicBreadcrumbProps> = ({ ...rest }) => {
   const { prefixCls } = useDesign('basic-breadcrumb');
   const matches = useMatches() as {
     data: CrumbData;
@@ -27,7 +27,5 @@ import classNames from "classnames";
     .map((match) => match.handle?.crumb(match.data));
 
   const className = classNames(prefixCls, 'w-full flex items-center justify-start')
-  return <Breadcrumb className={className} items={items} {...rest}/>;
+  return <Breadcrumb className={className} items={items} {...rest} />;
 };
-
-export {BasicBreadcrumb} 

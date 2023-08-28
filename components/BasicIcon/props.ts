@@ -2,7 +2,7 @@ import type { CustomIconComponentProps } from '@ant-design/icons/lib/components/
 import React from 'react';
 
 
-export interface IconProps extends Partial<CustomIconComponentProps> {
+export interface BasicIconProps extends Partial<CustomIconComponentProps> {
     icon?: React.ReactNode;
     size?: number;
     iconifyInline?: boolean;

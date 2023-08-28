@@ -46,6 +46,7 @@ export * from './BasicModal/props'
 export * from './BasicModal/context/ModalProvider'
 export * from './BasicModal/hooks'
 
+export * from './BasicIcon/props'
 export * from './BasicButton/props'
 export * from './BasicPopButton/props'
 export * from './BasicDropdown/props'

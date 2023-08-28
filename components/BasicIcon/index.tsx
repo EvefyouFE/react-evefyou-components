@@ -10,9 +10,9 @@ import Icon, * as icons from '@ant-design/icons';
 import { Icon as Iconify } from '@iconify/react';
 import { FC, isValidElement } from 'react';
 import { ImgIcon } from '@/BasicIcon/ImgIcon';
-import { IconProps } from './pops';
+import { BasicIconProps } from './props';
 
-export const BasicIcon: FC<IconProps> = ({ icon, size, iconifyInline, ...rest }) => {
+export const BasicIcon: FC<BasicIconProps> = ({ icon, size, iconifyInline, ...rest }) => {
   if (!icon) return null;
   if (isValidElement(icon)) {
     return icon;

@@ -138,7 +138,15 @@ export declare type BasicHelpProps = Partial<TooltipProps> & {
     maxWidth?: string;
 };
 
-export declare const BasicIcon: FC<IconProps>;
+export declare const BasicIcon: FC<BasicIconProps>;
+
+export declare interface BasicIconProps extends Partial<CustomIconComponentProps> {
+    icon?: React_2.ReactNode;
+    size?: number;
+    iconifyInline?: boolean;
+    className?: string;
+    onClick?: () => void;
+}
 
 export declare const BasicMenu: FC<BasicMenuProps>;
 
@@ -437,14 +445,6 @@ export declare function getPopupContainer(node?: HTMLElement): HTMLElement;
  * @description:
  */
 export declare function getViewportOffset(element: Element): ViewportOffsetResult;
-
-declare interface IconProps extends Partial<CustomIconComponentProps> {
-    icon?: React_2.ReactNode;
-    size?: number;
-    iconifyInline?: boolean;
-    className?: string;
-    onClick?: () => void;
-}
 
 export declare type IconType = 'success' | 'info' | 'error' | 'warning';
 
