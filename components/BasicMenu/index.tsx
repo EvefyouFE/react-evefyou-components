@@ -10,7 +10,7 @@ import { ConfigProvider, Menu } from 'antd';
 import { FC, useCallback, useTransition } from 'react';
 import { useNavigate } from 'react-router';
 import './BasicMenu.less';
-import { useDesign } from '@common/hooks/useDesign';
+import { useDesign } from 'react-evefyou-common';
 import { useMenu } from "./hooks/useMenu";
 import { BasicMenuProps, MenuItem } from "./props";
 

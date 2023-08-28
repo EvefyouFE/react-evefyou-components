@@ -28,7 +28,6 @@ import { MessageDescriptor } from 'react-intl';
 import { ModalFunc } from 'antd/es/modal/confirm';
 import { ModalFuncProps } from 'antd';
 import { ModalProps } from 'antd';
-import { default as moment_2 } from 'moment';
 import { MouseEventHandler } from 'react';
 import { NamedExoticComponent } from 'react';
 import { notification } from 'antd';
@@ -49,8 +48,6 @@ import { TableProps } from 'antd/es/table';
 import { TableRowSelection } from 'antd/es/table/interface';
 import { TooltipProps } from 'antd';
 import { UsePropsMethods } from 'react-evefyou-hooks';
-
-export declare function addClass(element: HTMLElement, className: string): void;
 
 export declare const BasicBreadcrumb: FC<BasicBreadcrumbProps>;
 
@@ -348,8 +345,6 @@ declare function createWarningModal(options: ModalOptionsPartial): {
     update: (configUpdate: ModalFuncProps | ((prevConfig: ModalFuncProps) => ModalFuncProps)) => void;
 };
 
-export declare const dateUtil: typeof moment_2;
-
 declare const _default: {
     'components.common.text.ok': string;
     'components.common.search': string;
@@ -410,41 +405,13 @@ export declare function formatComponentsMessage({ id, values }: ComponentsProps)
 
 declare type FormatMessageProps = (descriptor: ComponentsProps, values?: ComponentsValues) => string;
 
-export declare function formatToDate(date?: moment_2.MomentInput, format?: string): string;
-
-export declare function formatToDateTime(date?: moment_2.MomentInput, format?: string): string;
-
 export declare type FormHookMethods = UseFormPropsMethods;
-
-export declare function getBoundingClientRect(element: Element): DOMRect | number;
 
 declare interface GetColumnsParams {
     ignoreIndex?: boolean;
     ignoreAction?: boolean;
     sort?: boolean;
 }
-
-/**
- *
- * @param el 获取内容高度
- * @returns
- */
-export declare function getHeight(el: HTMLElement): number;
-
-export declare function getPopupContainer(node?: HTMLElement): HTMLElement;
-
-/**
- * Get the left and top offset of the current element
- * left: the distance between the leftmost element and the left side of the document
- * top: the distance from the top of the element to the top of the document
- * right: the distance from the far right of the element to the right of the document
- * bottom: the distance from the bottom of the element to the bottom of the document
- * rightIncludeBody: the distance between the leftmost element and the right side of the document
- * bottomIncludeBody: the distance from the bottom of the element to the bottom of the document
- *
- * @description:
- */
-export declare function getViewportOffset(element: Element): ViewportOffsetResult;
 
 export declare type IconType = 'success' | 'info' | 'error' | 'warning';
 
@@ -606,8 +573,6 @@ export declare type PropsWithCls<P = unknown> = P & {
 
 export declare type Recordable<T = any> = Record<string, T>;
 
-export declare function removeClass(element: HTMLElement, className: string): void;
-
 export declare interface RenderCallbackParams {
     props: ItemProps;
     values: Recordable;
@@ -739,11 +704,6 @@ declare interface UseDataSourceMethods<T = any> {
     deleteTableRecord: (rowKey: string | number | string[] | number[]) => void;
 }
 
-export declare function useDesign(scope: string): {
-    prefixCls: string;
-    prefixVar: string;
-};
-
 export declare type UseFormPropsMethods = Pick<UsePropsMethods<BasicFormProps>, 'init'>;
 
 export declare type UseFormPropsReturnType = [BasicFormProps, UseFormPropsMethods];
@@ -796,17 +756,6 @@ export declare interface UseTablePropsSetMethods<T = any> extends UsePropsMethod
     setRowSelection: (value?: TableRowSelectionProps<T>) => void;
     setSize: (value?: SizeType) => void;
     setHeight: (value?: number) => void;
-}
-
-export declare function uuid(): string;
-
-export declare interface ViewportOffsetResult {
-    left: number;
-    top: number;
-    right: number;
-    bottom: number;
-    rightIncludeBody: number;
-    bottomIncludeBody: number;
 }
 
 export { }

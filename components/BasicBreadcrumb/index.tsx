@@ -10,7 +10,7 @@ import { Breadcrumb } from 'antd';
 import { FC } from 'react';
 import { useMatches } from 'react-router-dom';
 import { CrumbData } from 'react-evefyou-router';
-import { useDesign } from '@common/hooks/useDesign';
+import { useDesign } from 'react-evefyou-common';
 import { BasicBreadcrumbProps } from "./props";
 import { CrumbRouteHandle } from "./typing";
 import classNames from "classnames";

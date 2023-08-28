@@ -25,10 +25,10 @@ import { FormattedMessage } from 'react-intl';
 import { ColumnChangeParam } from '../../types/table';
 import { BasicScroll } from '@/BasicScroll';
 import { useTableContext } from '../../context';
-import { useDesign } from '@common/hooks';
+import { useDesign } from 'react-evefyou-common';
 import './ColumnSetting.less';
 import { PlainOptionNode } from './PlainOptionNode';
-import { getPopupContainer as getParentPopupContainer } from '@common/utils/dom';
+import { getPopupContainer as getParentPopupContainer } from 'react-evefyou-common';
 import {
   CheckListState,
   ColumnSettingProps,

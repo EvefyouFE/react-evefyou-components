@@ -12,8 +12,8 @@ import { is } from 'ramda';
 import React, { Children, PropsWithChildren } from 'react';
 import './BasicHelp.less';
 import { BasicHelpProps } from './props';
-import { getPopupContainer } from '@common/utils/dom';
-import { useDesign } from "@common/hooks";
+import { getPopupContainer } from 'react-evefyou-common';
+import { useDesign } from "react-evefyou-common";
 
 export const BasicHelp: React.FC<PropsWithChildren<BasicHelpProps>> = ({
   text,

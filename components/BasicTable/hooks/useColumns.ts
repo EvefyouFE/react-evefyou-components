@@ -6,9 +6,9 @@ import { DEFAULT_ALIGN, ROW_KEYS } from "../constants";
 import { BasicTableProps, TableColumnProps, TableColumnPropsWithKey } from "../props";
 import { CellFormat } from "../types/table";
 import { GetColumnsParams, UseColumnsReturnType } from "../types/tableColumns";
-import { formatToDate } from "@common/utils/dateUtil";
+import { formatToDate } from "react-evefyou-common";
 import { formatComponentsById } from '@/locale/locale';
-import { uuid } from "@common/utils/generate";
+import { uuid } from "react-evefyou-common";
 
 
 function handleItem<T>(item: TableColumnProps<T>, ellipsis?: boolean) {

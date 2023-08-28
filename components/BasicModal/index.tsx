@@ -19,7 +19,7 @@ import { useModalProps } from './hooks/useModalProps';
 import { useRenders } from './renders';
 import './BasicModal.less';
 import { ModalWrapper } from './components/ModalWrapper';
-import { useDesign } from '@common/hooks';
+import { useDesign } from 'react-evefyou-common';
 
 export const BasicModal = React.memo(
   forwardRef<ModalInstance, BasicModalProps>((props, ref) => {

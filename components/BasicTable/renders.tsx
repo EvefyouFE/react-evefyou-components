@@ -10,7 +10,7 @@ import { DEFAULT_TABLE_SETTING } from './constants';
 import { UseRednersProps } from './types/tableHook';
 import { TableRenderComp } from './types/table';
 import { TableHeaderProps } from './props';
-import { uuid } from '@common/utils/generate';
+import { uuid } from 'react-evefyou-common';
 
 // eslint-disable-next-line react-refresh/only-export-components
 const RenderTableSetting = React.memo(renderTableSettingFn);

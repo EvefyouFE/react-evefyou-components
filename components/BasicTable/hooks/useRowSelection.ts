@@ -3,7 +3,7 @@ import React, { Key, useCallback, useEffect, useMemo, useState } from "react";
 import { ROW_KEYS } from "../constants";
 import { UseRowSelectionReturnType } from "../types/tableRowSelection";
 import { BasicTableProps } from "../props";
-import { uuid } from "@common/utils/generate";
+import { uuid } from "react-evefyou-common";
 import { Recordable } from "../../types";
 
 

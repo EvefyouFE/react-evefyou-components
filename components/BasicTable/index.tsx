@@ -29,7 +29,7 @@ import { SearchState, TableChangeParams } from './types/table';
 import { TableContextValue, BasicTableInstance } from './types/tableHook';
 import './BasicTable.less';
 import { useTableProps } from './hooks/useTableProps';
-import { useDesign } from '@common/hooks';
+import { useDesign } from 'react-evefyou-common';
 import { TableContext } from './context';
 import { Recordable } from "@/types";
 

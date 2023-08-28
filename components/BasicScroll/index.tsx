@@ -10,14 +10,14 @@ import {
   useRef,
 } from 'react';
 import { useMountEffect, useUnmountEffect } from 'react-evefyou-hooks';
-import { useDesign } from '@common/hooks';
+import { useDesign } from 'react-evefyou-common';
 import {
   BasicScrollBase,
   BasicScrollProps,
 } from './base';
 import { classNames } from './utils';
 import './BasicScroll.less';
-import { addClass, removeClass, getHeight } from '@common/utils/dom';
+import { addClass, removeClass, getHeight } from 'react-evefyou-common';
 
 export interface BasicScrollMethods {
   props: BasicScrollProps;

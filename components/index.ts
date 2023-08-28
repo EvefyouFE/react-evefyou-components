@@ -57,7 +57,5 @@ export * from './BasicFallback/props'
 export * from './BasicResult/props'
 export * from './MessageHelper/props'
 
-export * from './_common/utils'
 export * from './_common/config'
-export * from './_common/hooks/useDesign'
 export * from './locale/locale'

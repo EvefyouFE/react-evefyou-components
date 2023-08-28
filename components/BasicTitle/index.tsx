@@ -11,7 +11,7 @@ import { FC, useMemo } from 'react';
 import { BasicHelp } from '@/BasicHelp';
 import './BasicTitle.less';
 import { BasicTitleProps } from './props';
-import { useDesign } from '@common/hooks';
+import { useDesign } from 'react-evefyou-common';
 import { PropsWithChildrenCls } from "../types";
 
 export const BasicTitle: FC<PropsWithChildrenCls<BasicTitleProps>> = ({

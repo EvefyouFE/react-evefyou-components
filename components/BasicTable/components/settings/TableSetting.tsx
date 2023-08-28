@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { TableSettingProps } from '../../props';
 import './TableSetting.less';
-import { useDesign } from '@common/hooks';
+import { useDesign } from 'react-evefyou-common';
 import 'virtual:windi.css';
 
 export const TableSetting: React.FC<TableSettingProps> = ({ items }) => {

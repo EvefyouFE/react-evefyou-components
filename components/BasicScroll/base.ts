@@ -9,7 +9,7 @@
 /* eslint-disable  */
 import { CSSProperties } from "react";
 import { ObjectUtils } from "./utils";
-import { uuid } from "@common/utils";
+import { uuid } from "react-evefyou-common";
 import { PropsWithChildrenCls, Recordable } from "../types";
 
 export type BasicScrollDefaultProps = PropsWithChildrenCls<{

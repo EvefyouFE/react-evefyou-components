@@ -22,7 +22,7 @@ import { BasicFormItem } from './components/BasicFormItem';
 import { useFormItems } from './hooks';
 import { BasicFormActionProps, BasicFormProps } from './props';
 import { BasicFormInstance } from './types/formHooks';
-import { uuid } from '@common/utils';
+import { uuid } from 'react-evefyou-common';
 import { useFormProps } from './hooks/useFormProps';
 import { PropsWithChildrenCls } from "../types";
 
