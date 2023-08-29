@@ -51,14 +51,14 @@ dependencies:
     specifier: '>=4.4.5'
     version: 4.4.5(react-dom@18.2.0)(react@18.2.0)
   react-evefyou-common:
-    specifier: '>=1.0.3'
-    version: 1.0.3(moment@2.29.4)(react-dom@18.2.0)(react@18.2.0)(uuid@9.0.0)
+    specifier: '>=1.0.6'
+    version: 1.0.6(moment@2.29.4)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0)
   react-evefyou-hooks:
-    specifier: '>=1.0.12'
-    version: 1.0.12(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.3)(react@18.2.0)(recoil@0.7.7)
+    specifier: '>=1.0.15'
+    version: 1.0.15(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.6)(react@18.2.0)(recoil@0.7.7)
   react-evefyou-router:
-    specifier: '>=1.0.9'
-    version: 1.0.9(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.3)(react-router-dom@6.10.0)(react-router@6.10.0)(react@18.2.0)
+    specifier: '>=1.0.11'
+    version: 1.0.11(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.6)(react-router-dom@6.10.0)(react-router@6.10.0)(react@18.2.0)
   react-intl:
     specifier: '>=6.4.4'
     version: 6.4.4(react@18.2.0)(typescript@5.1.6)
@@ -4670,52 +4670,54 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /react-evefyou-common@1.0.3(moment@2.29.4)(react-dom@18.2.0)(react@18.2.0)(uuid@9.0.0):
-    resolution: {integrity: sha512-189xklLrrLUtfYS2pwJrH73MSkV4JdRm1md9fWknp1axvsHen3nui2kP3OC+kpaO1T9SHHiHHDSoafdaAntnjw==}
+  /react-evefyou-common@1.0.6(moment@2.29.4)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0):
+    resolution: {integrity: sha512-f6HpPU9Prx8wOXtdcYUgRs0ZMKuMwECN0YHPx3gBKy9apkluITaaM2iMaDeWuc7ZVgGmgpEXnx+JUhBCufsAIQ==}
     peerDependencies:
       moment: '>=2.29.4'
       react: '>=18.2.0'
       react-dom: '>=18.2.0'
+      react-intl: '>=6.4.4'
       uuid: '>=9.0.0'
     dependencies:
       moment: 2.29.4
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+      react-intl: 6.4.4(react@18.2.0)(typescript@5.1.6)
       uuid: 9.0.0
     dev: false
 
-  /react-evefyou-hooks@1.0.12(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.3)(react@18.2.0)(recoil@0.7.7):
-    resolution: {integrity: sha512-Q2WRQtle1mOkEMQDIt5m9InJFyY/HnWeDmDVcm+X/ufUSfNL6wG1qhotJs2AWZ7A/9tnuyVm3OIsCrkeQ6i1Og==}
+  /react-evefyou-hooks@1.0.15(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.6)(react@18.2.0)(recoil@0.7.7):
+    resolution: {integrity: sha512-HCPE4fwbKSDrvK7z6OMonlkaX30OlvLRO5WMK9vCK/0pf38KKIPt/xwL0G7HHETl+FrpBfdN3DE05t/vZYMXrA==}
     peerDependencies:
       ahooks: '>=3.7.6'
       ramda: '>=0.29.0'
       react: '>=18.2.0'
       react-dom: '>=18.2.0'
-      react-evefyou-common: '>=1.0.3'
+      react-evefyou-common: '>=1.0.6'
       recoil: '>=0.7.7'
     dependencies:
       ahooks: 3.7.6(react@18.2.0)
       ramda: 0.29.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      react-evefyou-common: 1.0.3(moment@2.29.4)(react-dom@18.2.0)(react@18.2.0)(uuid@9.0.0)
+      react-evefyou-common: 1.0.6(moment@2.29.4)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0)
       recoil: 0.7.7(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
-  /react-evefyou-router@1.0.9(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.3)(react-router-dom@6.10.0)(react-router@6.10.0)(react@18.2.0):
-    resolution: {integrity: sha512-ALEUtcz3ldiFk/P533HHyVatHtSJ4jaf88rb0PmL1i96Lr+jGFOVHIa7Pj13vcikw83APwGe9+lFwsICGyFMKQ==}
+  /react-evefyou-router@1.0.11(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.6)(react-router-dom@6.10.0)(react-router@6.10.0)(react@18.2.0):
+    resolution: {integrity: sha512-iViAp3IMQFRCzNGfejLaLlUV7BH4w/7pkfGvdOlOQ5eOrG/aqQG/BEREGpcMWja+Zm9NE4UQbkGFwGFTCExG8A==}
     peerDependencies:
       ramda: '>=0.29.0'
       react: '>=18.2.0'
       react-dom: '>=18.2.0'
-      react-evefyou-common: '>=1.0.3'
+      react-evefyou-common: '>=1.0.6'
       react-router: '>=6.10.0'
       react-router-dom: '>=6.10.0'
     dependencies:
       ramda: 0.29.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      react-evefyou-common: 1.0.3(moment@2.29.4)(react-dom@18.2.0)(react@18.2.0)(uuid@9.0.0)
+      react-evefyou-common: 1.0.6(moment@2.29.4)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0)
       react-router: 6.10.0(react@18.2.0)
       react-router-dom: 6.10.0(react-dom@18.2.0)(react@18.2.0)
     dev: false
