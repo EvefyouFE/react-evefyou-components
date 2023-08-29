@@ -12,7 +12,7 @@ import { SpaceSize } from "antd/es/space";
 import { CSSProperties, MouseEventHandler } from "react";
 import { ItemComponentType } from "./types/form";
 import { BasicHelpProps } from "../BasicHelp/props";
-import { Recordable } from "../types";
+import { Recordable } from "react-evefyou-common";
 
 export interface RenderCallbackParams {
     props: ItemProps;

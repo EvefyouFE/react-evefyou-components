@@ -7,6 +7,7 @@
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
  */
 import { SortOrder, SorterResult } from "antd/es/table/interface";
+import { Recordable } from "react-evefyou-common";
 
 export type PropsWithCls<P = unknown> = P & {
   className?: string | undefined;
@@ -16,9 +17,6 @@ export type PropsWithChildrenCls<P = unknown> = P & {
   children?: React.ReactNode | undefined;
   className?: string | undefined;
 };
-
-export type Recordable<T = any> = Record<string, T>;
-export type Nullable<T> = T | null;
 
 export interface Option {
   key: string;

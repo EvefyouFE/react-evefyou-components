@@ -9,7 +9,7 @@
 import { FormInstance } from "antd";
 import { BaseInstance, UsePropsMethods } from "react-evefyou-hooks";
 import { BasicFormProps, ItemProps } from "../props";
-import { Recordable } from "../../types";
+import { Recordable } from "react-evefyou-common"
 
 export interface ItemComponentParams {
   props: Partial<ItemProps>;

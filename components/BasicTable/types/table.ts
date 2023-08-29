@@ -9,7 +9,7 @@
 import React from "react";
 import { PopconfirmProps, TooltipProps } from "antd";
 import { BasicPopButtonProps } from "../../BasicPopButton/props";
-import { Recordable } from "../../types";
+import { Recordable } from "react-evefyou-common"
 
 export interface TableSetting {
   redo?: boolean;

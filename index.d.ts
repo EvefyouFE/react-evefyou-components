@@ -36,6 +36,7 @@ import { PrimitiveType } from 'react-intl';
 import { PropsWithChildren } from 'react';
 import { default as React_2 } from 'react';
 import { ReactElement } from 'react';
+import { Recordable } from 'react-evefyou-common';
 import { RefAttributes } from 'react';
 import { RowProps } from 'antd';
 import { RowSelectMethod } from 'antd/es/table/interface';
@@ -553,8 +554,6 @@ export declare interface ModalWrapperProps extends PropsWithChildren {
 
 export declare type NotificationPlacement = 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
 
-export declare type Nullable<T> = T | null;
-
 declare interface Option_2 {
     key: string;
     title?: string;
@@ -570,8 +569,6 @@ export declare type PropsWithChildrenCls<P = unknown> = P & {
 export declare type PropsWithCls<P = unknown> = P & {
     className?: string | undefined;
 };
-
-export declare type Recordable<T = any> = Record<string, T>;
 
 export declare interface RenderCallbackParams {
     props: ItemProps;

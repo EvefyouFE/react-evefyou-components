@@ -1,4 +1,4 @@
-import { Recordable } from "../../types";
+import { Recordable } from "react-evefyou-common"
 import { useMemo } from "react";
 
 interface UseNativePropsOptions {

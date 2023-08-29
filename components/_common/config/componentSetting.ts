@@ -7,7 +7,8 @@
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
  */
 import { SorterResult } from "antd/es/table/interface";
-import { ComponentSetting, Recordable } from "../../types";
+import { ComponentSetting } from "../../types";
+import { Recordable } from "react-evefyou-common";
 
 export const DEFAULT_COMPONENT_SETTING: ComponentSetting = {
   table: {

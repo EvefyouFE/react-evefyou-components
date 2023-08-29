@@ -12,7 +12,8 @@ import { ColumnsType, TableRowSelection } from "antd/es/table/interface";
 import React from "react";
 import { BasicFormProps } from "../BasicForm/props";
 import { CellFormat, ColumnChangeParam, TableActionItem, TableChangeParams, TableSetting } from "./types/table";
-import { FilterFn, Recordable, SortFn } from "../types";
+import { FilterFn, SortFn } from "../types";
+import { Recordable } from "react-evefyou-common";
 
 export interface TableActionProps {
     divider?: boolean;

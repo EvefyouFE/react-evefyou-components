@@ -9,7 +9,7 @@ import { ItemInnerProps } from '../props';
 import { createPlaceholderMessage, validator } from '../utils/helper';
 import { BasicHelp } from '@/BasicHelp';
 import { formatComponentsById } from '@/locale/locale';
-import { Nullable, Recordable } from "../../types";
+import { Nullable, Recordable } from "react-evefyou-common";
 
 function renderLabelHelpMessage({
   label,
