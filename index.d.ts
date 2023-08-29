@@ -374,6 +374,8 @@ export declare interface CrumbRouteHandle {
 
 export declare const DEFAULT_ALIGN = "center";
 
+export declare const DEFAULT_BASIC_TABLE_SETTING: BasicTableSetting;
+
 export declare const DEFAULT_FILTER_FN: FilterFn;
 
 export declare const DEFAULT_PAGINATION_PROPS: TablePaginationConfig;
