@@ -19,6 +19,7 @@ import { FormProps } from 'antd';
 import { ForwardRefExoticComponent } from 'react';
 import { GetRowKey } from 'antd/es/table/interface';
 import { JSX as JSX_2 } from 'react/jsx-runtime';
+import { KeyItem } from 'react-evefyou-hooks';
 import { MemoExoticComponent } from 'react';
 import { MenuItemType } from 'antd/es/menu/hooks/useItems';
 import { MenuProps } from 'antd';
@@ -588,6 +589,12 @@ export declare interface SorterParam {
 
 export declare type SortFn = <T>(sortInfo: SorterResult<T>) => SorterParam | object;
 
+export declare interface TabItem extends KeyItem<string> {
+    label: React_2.ReactNode;
+    children: React_2.ReactNode;
+    closeIcon: React_2.ReactNode;
+}
+
 export declare const TableAction: FC<TableActionProps>;
 
 export declare interface TableActionItem extends BasicPopButtonProps {
@@ -754,5 +761,9 @@ export declare interface UseTablePropsSetMethods<T = any> extends UsePropsMethod
     setSize: (value?: SizeType) => void;
     setHeight: (value?: number) => void;
 }
+
+export declare function useTabs(): {
+    getTabItem: (key: string, locale: string, title?: string, children?: React_2.ReactNode) => TabItem;
+};
 
 export { }

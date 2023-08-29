@@ -59,3 +59,5 @@ export * from './MessageHelper/props'
 
 export * from './_common/config'
 export * from './locale/locale'
+
+export * from '@common/hooks/useTabs'
