@@ -2,11 +2,11 @@ import { MenuTreeList } from "react-evefyou-router";
 import { MenuItemLabel } from "../components/MenuItemLabel";
 import React from "react";
 import { BasicIcon } from "@/BasicIcon";
-import { MenuItem } from "../props";
+import { AntdMenuItem } from "../props";
 
 
 export function useMenu() {
-  function loopMenuItem(menus?: MenuTreeList): MenuItem[] | undefined {
+  function loopMenuItem(menus?: MenuTreeList): AntdMenuItem[] | undefined {
     return menus?.map((item) => ({
       label: React.createElement(MenuItemLabel, {
         title: item.locale ? item.locale : item.name || ''
@@ -16,7 +16,7 @@ export function useMenu() {
         icon: item.icon
       }),
       children: item.children && loopMenuItem(item.children),
-    } as MenuItem))
+    } as AntdMenuItem))
   }
   return {
     loopMenuItem

@@ -1,7 +1,7 @@
 import { MenuProps } from "antd";
 import { MenuTreeList } from "react-evefyou-router";
 
-export type MenuItem = Required<MenuProps>['items'][number];
+export type AntdMenuItem = Required<MenuProps>['items'][number];
 
 export interface MenuItemLabelProps {
   title: string;

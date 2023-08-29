@@ -51,6 +51,8 @@ import { TableRowSelection } from 'antd/es/table/interface';
 import { TooltipProps } from 'antd';
 import { UsePropsMethods } from 'react-evefyou-hooks';
 
+export declare type AntdMenuItem = Required<MenuProps>['items'][number];
+
 export declare const BasicBreadcrumb: FC<BasicBreadcrumbProps>;
 
 export declare type BasicBreadcrumbProps = BreadcrumbProps & {
@@ -447,8 +449,6 @@ export declare interface ItemProps extends Omit<FormItemProps, 'required'> {
     dynamicRules?: (params: RenderCallbackParams) => FormItemProps['rules'];
 }
 
-export declare type MenuItem = Required<MenuProps>['items'][number];
-
 export declare const MenuItemLabel: FC<MenuItemLabelProps>;
 
 export declare interface MenuItemLabelProps {
@@ -713,7 +713,7 @@ export declare type UseFormPropsMethods = Pick<UsePropsMethods<BasicFormProps>, 
 export declare type UseFormPropsReturnType = [BasicFormProps, UseFormPropsMethods];
 
 export declare function useMenu(): {
-    loopMenuItem: (menus?: MenuTreeList) => MenuItem[] | undefined;
+    loopMenuItem: (menus?: MenuTreeList) => AntdMenuItem[] | undefined;
 };
 
 export declare function useModalContext(): ModalContextValue;

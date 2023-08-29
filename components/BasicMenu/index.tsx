@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router';
 import './BasicMenu.less';
 import { useDesign } from 'react-evefyou-common';
 import { useMenu } from "./hooks/useMenu";
-import { BasicMenuProps, MenuItem } from "./props";
+import { BasicMenuProps, AntdMenuItem } from "./props";
 
 export const BasicMenu: FC<BasicMenuProps> = (props) => {
   const { menuTreeList, className = '', mode } = props;
@@ -23,7 +23,7 @@ export const BasicMenu: FC<BasicMenuProps> = (props) => {
 
   const items = loopMenuItem(menuTreeList);
   const defaultSelectedKeys = items ? [items?.[0]?.key as string] : undefined
-  const handleClick = useCallback((item: MenuItem) => {
+  const handleClick = useCallback((item: AntdMenuItem) => {
     startTrainsition(() => {
       navigate(item?.key as string);
     });
