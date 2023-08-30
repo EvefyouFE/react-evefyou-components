@@ -7,7 +7,7 @@
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved.
  */
 import { Col, Form } from 'antd';
-import { deepCompareObj } from 'react-evefyou-hooks';
+import { deepCompareObj } from 'react-evefyou-common';
 import { FC, memo, useMemo } from 'react';
 import { BasicFormItemProps } from '../props';
 import { Item } from './render';

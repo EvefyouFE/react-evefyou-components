@@ -11,7 +11,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import { useUnmountEffect, deepCompareObj } from 'react-evefyou-hooks';
+import { useUnmountEffect } from 'react-evefyou-hooks';
 import { useModalContext } from './hooks';
 import { BasicModalProps, ModalWrapperProps } from './props';
 import { ModalInstance } from './typing';
@@ -19,7 +19,7 @@ import { useModalProps } from './hooks/useModalProps';
 import { useRenders } from './renders';
 import './BasicModal.less';
 import { ModalWrapper } from './components/ModalWrapper';
-import { useDesign } from 'react-evefyou-common';
+import { useDesign, deepCompareObj } from 'react-evefyou-common';
 
 export const BasicModal = React.memo(
   forwardRef<ModalInstance, BasicModalProps>((props, ref) => {

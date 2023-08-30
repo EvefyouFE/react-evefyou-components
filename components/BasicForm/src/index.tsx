@@ -16,13 +16,13 @@ import React, {
   useMemo,
 } from 'react';
 import 'virtual:windi.css';
-import { usePropsState, deepCompareObj } from 'react-evefyou-hooks';
+import { usePropsState } from 'react-evefyou-hooks';
 import { BasicFormAction } from './components/BasicFormAction';
 import { BasicFormItem } from './components/BasicFormItem';
 import { useFormItems } from './hooks';
 import { BasicFormActionProps, BasicFormProps } from './props';
 import { BasicFormInstance } from './types/formHooks';
-import { uuid, PropsWithChildrenCls } from 'react-evefyou-common';
+import { uuid, PropsWithChildrenCls, deepCompareObj } from 'react-evefyou-common';
 import { useFormProps } from './hooks/useFormProps';
 
 export const BasicForm = React.memo(
