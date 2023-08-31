@@ -11,7 +11,8 @@ import { FC, useMemo } from 'react';
 import { BasicHelp } from '@/BasicHelp';
 import './BasicTitle.less';
 import { BasicTitleProps } from './props';
-import { useDesign, PropsWithChildrenCls } from 'react-evefyou-common';
+import { PropsWithChildrenCls } from 'react-evefyou-common';
+import { useDesign } from 'react-evefyou-hooks/useDesign';
 
 export const BasicTitle: FC<PropsWithChildrenCls<BasicTitleProps>> = ({
   span,

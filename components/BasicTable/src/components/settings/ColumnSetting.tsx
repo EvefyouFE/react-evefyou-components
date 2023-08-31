@@ -20,12 +20,12 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { useUnmountEffect } from 'react-evefyou-hooks';
+import { useUnmountEffect } from 'react-evefyou-hooks/useUnmountEffect';
+import { useDesign } from 'react-evefyou-hooks/useDesign';
 import { FormattedMessage } from 'react-intl';
 import { ColumnChangeParam } from '../../types/table';
 import { BasicScroll } from '@/BasicScroll';
 import { useTableContext } from '../../context';
-import { useDesign } from 'react-evefyou-common';
 import './ColumnSetting.less';
 import { PlainOptionNode } from './PlainOptionNode';
 import { getPopupContainer as getParentPopupContainer } from 'react-evefyou-common';

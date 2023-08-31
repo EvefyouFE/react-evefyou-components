@@ -1,6 +1,6 @@
 import { clone, is } from "ramda";
 import { ColumnType } from "antd/es/table";
-import { useUnmountEffect } from "react-evefyou-hooks";
+import { useUnmountEffect } from "react-evefyou-hooks/useUnmountEffect";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { DEFAULT_ALIGN, ROW_KEYS } from "../constants";
 import { BasicTableProps, TableColumnProps, TableColumnPropsWithKey } from "../props";

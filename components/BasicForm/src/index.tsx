@@ -16,7 +16,7 @@ import React, {
   useMemo,
 } from 'react';
 import 'virtual:windi.css';
-import { usePropsState } from 'react-evefyou-hooks';
+import { usePropsState } from 'react-evefyou-hooks/usePropsState';
 import { BasicFormAction } from './components/BasicFormAction';
 import { BasicFormItem } from './components/BasicFormItem';
 import { useFormItems } from './hooks';

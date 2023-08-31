@@ -29,7 +29,8 @@ import { SearchState, TableChangeParams } from './types/table';
 import { TableContextValue, BasicTableInstance } from './types/tableHook';
 import './BasicTable.less';
 import { useTableProps } from './hooks/useTableProps';
-import { useDesign, Recordable } from 'react-evefyou-common';
+import { Recordable } from 'react-evefyou-common';
+import { useDesign } from 'react-evefyou-hooks/useDesign';
 import { TableContext } from './context';
 
 export const BasicTable = React.memo(
