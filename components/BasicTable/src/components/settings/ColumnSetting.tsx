@@ -20,8 +20,8 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { useUnmountEffect } from 'react-evefyou-hooks/useUnmountEffect';
-import { useDesign } from 'react-evefyou-hooks/useDesign';
+import { useUnmountEffect } from 'react-evefyou-hooks';
+import { useDesign } from 'react-evefyou-hooks';
 import { FormattedMessage } from 'react-intl';
 import { ColumnChangeParam } from '../../types/table';
 import { BasicScroll } from '@/BasicScroll';

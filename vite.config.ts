@@ -20,52 +20,76 @@ import fs from 'fs';
 
 const pathResolve = (v: string) => path.resolve(__dirname, v)
 
+const libName = 'components'
+
 const externalPackages = [...Object.keys(pkg.peerDependencies)]
 const regexOfPackages = externalPackages
   .map(packageName => new RegExp(`^${packageName}(\\/.*)?`));
 
-const entries = {
-  'index': pathResolve('components/index.ts'),
-  'locale/en_US': pathResolve('components/locale/en_US.ts'),
-  'locale/zh_CN': pathResolve('components/locale/zh_CN.ts'),
-}
-
+const components = Object.keys(pkg.exports)
+  .filter(e => e !== '.' && !e.includes('locale') && !e.includes('css'))
+  .map(e => e.split('./')[1])
+// console.log('components', components)
 const locales = Object.keys(pkg.exports)
   .filter(e => e.includes('locale'))
   .map(e => e.split('./')[1])
-const components = Object.keys(pkg.exports)
-  .filter(e => e !== '.' && !e.includes('locale'))
-  .map(e => e.split('./')[1])
 
-console.log('components', components)
+const entries = Object.keys(pkg.exports).filter(e => !e.includes('css')).reduce((acc, cur) => {
+  const isIndex = cur === '.'
+  cur = cur.split('./')[1]
+  const key = isIndex ? 'index' : cur
+  const val = isIndex ? pathResolve(`${libName}/index.ts`) : pathResolve(`${libName}/${cur}/index.ts`)
+  acc[key] = val
+  return acc
+}, {})
 
+const formats = ['es', 'cjs']
+console.log('entries', entries)
+
+function moveFile(oldPath, newPath) {
+  fs.rename(oldPath, newPath, (err) => {
+    if (err) {
+      console.error('移动文件失败:', err);
+    } else {
+      console.log('文件已成功移动到新位置');
+    }
+  });
+}
 export default defineConfig({
   plugins: [
     react(),
     WindiCSS({
       scan: {
-        dirs: ['./components'],
+        dirs: [`./${libName}`],
         fileExtensions: ['tsx', 'ts']
       }
     }),
     tsconfigPaths(),
     dts({
+      outDir: formats,
       rollupTypes: true,
-      afterBuild: () => {
-        const directoryPath = '.';
-        const regexToDelete = /_\w+\.d\.ts$/;
-        fs.readdirSync(directoryPath).forEach((file) => {
-          const filePath = path.join(directoryPath, file);
-          if (regexToDelete.test(file)) {
-            try {
-              fs.unlinkSync(filePath);
-              console.log(`Deleted file: ${filePath}`);
-            } catch (err) {
-              console.error(`Error deleting file: ${err}`);
-            }
-          }
-        });
-      }
+      afterBuild() {
+        console.log('start...', new Date().getTime())
+        setTimeout(() => {
+          formats.forEach(f => {
+            components.forEach(comp => {
+              const oldPath = pathResolve(`./${f}/${comp}.d.ts`)
+              const newPath = pathResolve(`./${f}/${comp}/index.d.ts`)
+              moveFile(oldPath, newPath)
+            })
+            locales.forEach(l => {
+              fs.rm(pathResolve(`${f}/${l}.d.ts`), (err) => {
+                console.error('删除文件失败:', err);
+              })
+              const ol = l.split('locale/')[1]
+              const oldPath = pathResolve(`./${f}/${ol}.d.ts`)
+              const newPath = pathResolve(`./${f}/${l}/index.d.ts`)
+              console.log(oldPath, newPath)
+              moveFile(oldPath, newPath)
+            })
+          })
+        }, 10000);
+      },
     }),
     libInjectCss({
       build: {
@@ -76,35 +100,16 @@ export default defineConfig({
         outDir: '.',
       },
       entry: entries,
-      fileName: (format, entryName) => {
-        return entryName === 'index'
-          ? `${format}/index.js`
-          : `${format}/[name]/index.js`
-      },
       name: 'react-evefyou-components',
-      formats: ["es", "cjs"],
+      formats: formats as any,
       rollupOptions: {
         output: {
           minifyInternalExports: false,
-          manualChunks: (id) => {
-            if (id.includes('_common') && id.includes('hooks/use')) {
-              console.log('hooks', id.split('/hooks/')[1].split('.ts')[0])
-              return 'hooks/'.concat(id.split('/hooks/')[1].split('.ts')[0])
-            }
-            if (id.includes('_common') && id.includes('utils/')) {
-              console.log('utils', id.split('/utils/')[1].split('.ts')[0])
-              return 'utils/'.concat(id.split('/utils/')[1].split('.ts')[0])
-            }
-            let en = components.find(e => id.includes(e))
-            en ??= locales.find(l => id.includes(l.split('_')[0]))
-            // console.log('manualChunks', en, id)
-            return en
-          },
-          chunkFileNames: () => {
-            // console.log('chunkInfo', chunkInfo.name)
-            return '[format]/[name]/index.js'
-          },
+          // manualChunks: (id) => components.find(e => id.includes(e))?.concat('/index'),
+          chunkFileNames: '[format]/[name].js',
           assetFileNames: '[ext]/[name].[ext]',
+          entryFileNames: (chunkInfo) => chunkInfo.name === 'index'
+            ? '[format]/[name].js' : '[format]/[name]/index.js'
         },
         external: regexOfPackages
       }
@@ -117,7 +122,7 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         modifyVars: {
-          hack: `true; @import (reference) "${path.resolve('components/styles/variables/index.less')}";`,
+          hack: `true; @import (reference) "${pathResolve(`${libName}/styles/variables/index.less`)}";`,
           'primary-color': '#0960bd',
           'text-color': '#c9d1d9',
           'text-color-base': '#000000d9',

@@ -9,9 +9,9 @@ import {
   useImperativeHandle,
   useRef,
 } from 'react';
-import { useMountEffect } from 'react-evefyou-hooks/useMountEffect';
-import { useUnmountEffect } from 'react-evefyou-hooks/useUnmountEffect';
-import { useDesign } from 'react-evefyou-hooks/useDesign';
+import { useMountEffect } from 'react-evefyou-hooks';
+import { useUnmountEffect } from 'react-evefyou-hooks';
+import { useDesign } from 'react-evefyou-hooks';
 import {
   BasicScrollBase,
   BasicScrollProps,

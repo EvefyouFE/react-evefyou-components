@@ -1,119 +1,104 @@
 {
   "name": "react-evefyou-components",
-  "version": "1.0.37",
+  "version": "1.0.38",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
   "module": "./es/index.js",
-  "types": "./index.d.ts",
+  "types": "./es/index.d.ts",
   "exports": {
     ".": {
       "import": "./es/index.js",
-      "require": "./cjs/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/index.js"
+    },
+    "./windicss": {
+      "import": "./css/windi.css",
+      "require": "./css/windi.css"
     },
     "./locale/zh_CN": {
       "import": "./es/locale/zh_CN/index.js",
       "require": "./cjs/locale/zh_CN/index.js",
-      "types": "./locale/zh_CN.d.ts"
+      "types": "./es/locale/zh_CN/index.d.ts"
     },
     "./locale/en_US": {
       "import": "./es/locale/en_US/index.js",
       "require": "./cjs/locale/en_US/index.js",
-      "types": "./locale/zh_CN.d.ts"
+      "types": "./es/locale/en_US/index.d.ts"
     },
     "./BasicButton": {
       "import": "./es/BasicButton/index.js",
-      "require": "./cjs/BasicButton/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicButton/index.js"
     },
     "./BasicDropdown": {
       "import": "./es/BasicDropdown/index.js",
-      "require": "./cjs/BasicDropdown/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicDropdown/index.js"
     },
     "./BasicForm": {
       "import": "./es/BasicForm/index.js",
-      "require": "./cjs/BasicForm/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicForm/index.js"
     },
     "./BasicHelp": {
       "import": "./es/BasicHelp/index.js",
-      "require": "./cjs/BasicHelp/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicHelp/index.js"
     },
     "./BasicIcon": {
       "import": "./es/BasicIcon/index.js",
-      "require": "./cjs/BasicIcon/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicIcon/index.js"
     },
     "./BasicMenu": {
       "import": "./es/BasicMenu/index.js",
-      "require": "./cjs/BasicMenu/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicMenu/index.js"
     },
     "./BasicModal": {
       "import": "./es/BasicModal/index.js",
-      "require": "./cjs/BasicModal/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicModal/index.js"
     },
     "./BasicPopButton": {
       "import": "./es/BasicPopButton/index.js",
-      "require": "./cjs/BasicPopButton/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicPopButton/index.js"
     },
     "./BasicScroll": {
       "import": "./es/BasicScroll/index.js",
-      "require": "./cjs/BasicScroll/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicScroll/index.js"
     },
     "./BasicTable": {
       "import": "./es/BasicTable/index.js",
-      "require": "./cjs/BasicTable/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicTable/index.js"
     },
     "./BasicTitle": {
       "import": "./es/BasicTitle/index.js",
-      "require": "./cjs/BasicTitle/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicTitle/index.js"
     },
     "./BasicBreadcrumb": {
       "import": "./es/BasicBreadcrumb/index.js",
-      "require": "./cjs/BasicBreadcrumb/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicBreadcrumb/index.js"
     },
     "./BasicFallback": {
       "import": "./es/BasicFallback/index.js",
-      "require": "./cjs/BasicFallback/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicFallback/index.js"
     },
     "./BasicNProgress": {
       "import": "./es/BasicNProgress/index.js",
-      "require": "./cjs/BasicNProgress/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicNProgress/index.js"
     },
     "./BasicResult": {
       "import": "./es/BasicResult/index.js",
-      "require": "./cjs/BasicResult/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicResult/index.js"
     },
     "./MessageHelper": {
       "import": "./es/MessageHelper/index.js",
-      "require": "./cjs/MessageHelper/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/MessageHelper/index.js"
     }
   },
   "files": [
     "es",
     "cjs",
-    "css",
-    "index.d.ts",
-    "locale"
+    "css"
   ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "build:tsc": "tsc",
+    "build:tsc": "tsup",
     "clean": "rimraf node_modules",
     "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
     "clean:build": "rimraf es && rimraf cjs && rimraf css && rimraf dist && rimraf locale",
@@ -146,22 +131,23 @@
     "antd": ">=5.6.3",
     "classnames": ">=2.3.2",
     "moment": ">=2.29.4",
+    "nprogress": ">=0.2.0",
     "ramda": ">=0.29.0",
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0",
+    "react-draggable": ">=4.4.5",
+    "react-evefyou-common": ">=1.0.12",
+    "react-evefyou-hooks": ">=1.0.23",
+    "react-evefyou-router": ">=1.0.15",
+    "react-intl": ">=6.4.4",
     "react-router": ">=6.10.0",
     "react-router-dom": ">=6.10.0",
-    "react-draggable": ">=4.4.5",
-    "react-evefyou-hooks": ">=1.0.21",
-    "react-evefyou-router": ">=1.0.13",
-    "react-evefyou-common": ">=1.0.9",
-    "react-intl": ">=6.4.4",
-    "nprogress": ">=0.2.0",
     "uuid": ">=9.0.0"
   },
   "devDependencies": {
     "@ant-design/colors": "^7.0.0",
     "@types/node": "^20.5.1",
+    "@types/nprogress": "^0.2.0",
     "@types/ramda": "^0.29.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
@@ -170,6 +156,7 @@
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
     "cssnano": "^6.0.1",
+    "esbuild-plugin-less": "^1.2.4",
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
@@ -181,8 +168,8 @@
     "postcss-preset-env": "^8.3.2",
     "rimraf": "^5.0.1",
     "tslib": "^2.6.1",
+    "tsup": "^7.2.0",
     "typescript": "^5.1.6",
-    "@types/nprogress": "^0.2.0",
     "vite": "^4.4.5",
     "vite-plugin-dts": "^3.5.1",
     "vite-plugin-lib-inject-css": "^1.2.1",

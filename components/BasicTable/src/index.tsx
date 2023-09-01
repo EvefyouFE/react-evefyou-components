@@ -30,7 +30,7 @@ import { TableContextValue, BasicTableInstance } from './types/tableHook';
 import './BasicTable.less';
 import { useTableProps } from './hooks/useTableProps';
 import { Recordable } from 'react-evefyou-common';
-import { useDesign } from 'react-evefyou-hooks/useDesign';
+import { useDesign } from 'react-evefyou-hooks';
 import { TableContext } from './context';
 
 export const BasicTable = React.memo(

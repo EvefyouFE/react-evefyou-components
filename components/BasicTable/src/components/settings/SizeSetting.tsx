@@ -8,7 +8,7 @@
  */
 import { ColumnHeightOutlined } from '@ant-design/icons';
 import { Dropdown, Tooltip, TooltipProps } from 'antd';
-import { useSelectItemsState } from "react-evefyou-hooks/useSelectItemsState";
+import { useSelectItemsState } from "react-evefyou-hooks";
 import { SizeType } from 'antd/es/config-provider/SizeContext';
 import { MenuItemType } from 'antd/es/menu/hooks/useItems';
 import React from 'react';

@@ -11,7 +11,7 @@ import classNames from 'classnames';
 import { FC, PropsWithChildren, useMemo } from 'react';
 import { ButtonProps } from './props';
 import { BasicIcon } from '@/BasicIcon';
-import { useNativeProps } from "react-evefyou-hooks/useNativeProps";
+import { useNativeProps } from "react-evefyou-hooks";
 
 export const BasicButton: FC<PropsWithChildren<ButtonProps>> = ({
   preIcon,

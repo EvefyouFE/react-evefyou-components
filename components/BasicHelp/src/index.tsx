@@ -13,7 +13,7 @@ import React, { Children, PropsWithChildren } from 'react';
 import './BasicHelp.less';
 import { BasicHelpProps } from './props';
 import { getPopupContainer } from 'react-evefyou-common';
-import { useDesign } from "react-evefyou-hooks/useDesign";
+import { useDesign } from "react-evefyou-hooks";
 
 export const BasicHelp: React.FC<PropsWithChildren<BasicHelpProps>> = ({
   text,

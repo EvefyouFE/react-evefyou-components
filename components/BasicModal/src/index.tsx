@@ -11,8 +11,8 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import { useDesign } from 'react-evefyou-hooks/useDesign';
-import { useUnmountEffect } from 'react-evefyou-hooks/useUnmountEffect';
+import { useDesign } from 'react-evefyou-hooks';
+import { useUnmountEffect } from 'react-evefyou-hooks';
 import { useModalContext } from './hooks';
 import { BasicModalProps, ModalWrapperProps } from './props';
 import { ModalInstance } from './typing';

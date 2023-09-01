@@ -1,5 +1,5 @@
 import { useMemo } from "react"
-import { useProps } from "react-evefyou-hooks/useProps"
+import { useProps } from "react-evefyou-hooks"
 import { SizeType } from "antd/es/config-provider/SizeContext"
 import { BasicTableProps, TableRowSelectionProps } from "../props"
 import { UseTablePropsReturnType, UseTablePropsSetMethods } from "../types/tableHook"
