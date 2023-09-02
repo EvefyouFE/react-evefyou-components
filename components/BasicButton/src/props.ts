@@ -11,7 +11,7 @@ import React from "react";
 import { ButtonColorType } from "./typing";
 
 
-export interface ButtonProps extends Partial<AntdButtonProps> {
+export interface BasicButtonProps extends Partial<AntdButtonProps> {
     color?: ButtonColorType;
     loading?: boolean;
     disabled?: boolean;
