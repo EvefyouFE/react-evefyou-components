@@ -7,16 +7,14 @@
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
  */
 import nProgress from 'nprogress';
-import React, { useEffect } from 'react';
+import React, { PropsWithChildren, useEffect } from 'react';
 
 nProgress.configure({
   showSpinner: false,
 });
 
-export const BasicNProgress = ({
+export const BasicNProgress: React.FC<PropsWithChildren> = ({
   children,
-}: {
-  children: React.ReactElement;
 }): React.ReactElement => {
   useEffect(() => {
     nProgress.done();
@@ -24,7 +22,9 @@ export const BasicNProgress = ({
       nProgress.start();
     };
   }, []);
-  return children;
+  return (
+    <>{children}</>
+  )
 };
 
 export default BasicNProgress;
