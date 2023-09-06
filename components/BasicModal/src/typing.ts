@@ -18,8 +18,7 @@ export interface ModalHookMethods extends UseModalPropsMethods {
 }
 
 export interface ModalInstance extends BaseInstance<BasicModalProps>, Pick<ModalHookMethods,
-    'init'
-    | 'openModal'
+    'openModal'
     | 'closeModal'
     | 'openOkLoading'
     | 'closeOkLoading'

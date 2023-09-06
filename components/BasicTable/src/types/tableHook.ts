@@ -37,7 +37,7 @@ export interface TableContextValue<T = any> extends Pick<TableHookMethods<T>,
 }
 
 export interface BasicTableInstance<T = any> extends BaseInstance<BasicTableProps<T>>, Pick<TableHookMethods<T>,
-  'init' | 'setHeight' | 'getPagination' | 'getDataSource'
+  'setHeight' | 'getPagination' | 'getDataSource'
 > {
   getElement?: () => HTMLDivElement | null;
 }

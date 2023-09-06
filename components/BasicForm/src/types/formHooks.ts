@@ -21,7 +21,5 @@ export interface ItemComponentParams {
 export type UseFormPropsMethods = Pick<UsePropsMethods<BasicFormProps>, 'init'>;
 export type UseFormPropsReturnType = [BasicFormProps, UseFormPropsMethods]
 export type FormHookMethods = UseFormPropsMethods;
-export interface BasicFormInstance<T = any> extends FormInstance<T>, BaseInstance<BasicFormProps>, Pick<FormHookMethods,
-  'init'
-> {
+export interface BasicFormInstance<T = any> extends FormInstance<T>, BaseInstance<BasicFormProps> {
 }
