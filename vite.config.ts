@@ -21,6 +21,7 @@ import fs from 'fs';
 const pathResolve = (v: string) => path.resolve(__dirname, v)
 
 const libName = 'components'
+const libFullName = `react-evefyou-${libName}`
 
 const externalPackages = [...Object.keys(pkg.peerDependencies)]
 const regexOfPackages = externalPackages
@@ -100,7 +101,7 @@ export default defineConfig({
         outDir: '.',
       },
       entry: entries,
-      name: 'react-evefyou-components',
+      name: libFullName,
       formats: formats as any,
       rollupOptions: {
         output: {

@@ -5,7 +5,7 @@ import {
   SorterResult,
   TableCurrentDataSource,
 } from 'antd/es/table/interface';
-import { deepCompareObj } from 'react-evefyou-common';
+import { deepCompareObj } from 'react-evefyou-common/utils/object/deepCompareObj';
 import classNames from 'classnames';
 import { is, omit } from 'ramda';
 import React, {
@@ -30,7 +30,7 @@ import { TableContextValue, BasicTableInstance } from './types/tableHook';
 import './BasicTable.less';
 import { useTableProps } from './hooks/useTableProps';
 import { Recordable } from 'react-evefyou-common';
-import { useDesign } from 'react-evefyou-hooks';
+import { useDesign } from 'react-evefyou-hooks/useDesign';
 import { TableContext } from './context';
 
 export const BasicTable = React.memo(

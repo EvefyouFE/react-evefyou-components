@@ -9,11 +9,11 @@
 import { Button } from 'antd';
 import classNames from 'classnames';
 import { FC, PropsWithChildren, useMemo } from 'react';
-import { ButtonProps } from './props';
+import { BasicButtonProps } from './props';
 import { BasicIcon } from '@/BasicIcon';
-import { useNativeProps } from "react-evefyou-hooks";
+import { useNativeProps } from "react-evefyou-hooks/useNativeProps";
 
-export const BasicButton: FC<PropsWithChildren<ButtonProps>> = ({
+export const BasicButton: FC<PropsWithChildren<BasicButtonProps>> = ({
   preIcon,
   postIcon,
   color = '',

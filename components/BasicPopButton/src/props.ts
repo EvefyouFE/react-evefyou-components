@@ -1,7 +1,7 @@
 import { PopconfirmProps } from 'antd';
-import { ButtonProps } from "@/BasicButton";
+import { BasicButtonProps } from "@/BasicButton";
 
-export interface BasicPopButtonProps extends Partial<ButtonProps> {
+export interface BasicPopButtonProps extends Partial<BasicButtonProps> {
     enable?: boolean;
     popconfirmProps?: PopconfirmProps;
 }

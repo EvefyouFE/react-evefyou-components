@@ -6,7 +6,7 @@ import {
 import { Tooltip } from 'antd';
 import { FC } from 'react';
 import { ModalCloseProps } from '../props';
-import { formatBaseById } from 'react-evefyou-common';
+import { formatBaseById } from 'react-evefyou-common/locale';
 
 export const ModalClose: FC<ModalCloseProps> = ({
   showFullscreen = true,

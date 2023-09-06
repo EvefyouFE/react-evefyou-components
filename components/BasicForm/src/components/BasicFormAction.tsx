@@ -7,7 +7,7 @@
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved.
  */
 import { DownOutlined } from '@ant-design/icons';
-import { deepCompareObj } from 'react-evefyou-common';
+import { deepCompareObj } from 'react-evefyou-common/utils/object/deepCompareObj';
 import { Button, Form, Space } from 'antd';
 import { memo, useMemo } from 'react';
 import { FormattedMessage } from 'react-intl';

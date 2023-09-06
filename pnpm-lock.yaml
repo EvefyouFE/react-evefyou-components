@@ -51,11 +51,11 @@ dependencies:
     specifier: '>=4.4.5'
     version: 4.4.5(react-dom@18.2.0)(react@18.2.0)
   react-evefyou-common:
-    specifier: '>=1.0.12'
-    version: 1.0.12(moment@2.29.4)(ramda@0.29.0)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0)
+    specifier: '>=1.0.17'
+    version: 1.0.17(moment@2.29.4)(ramda@0.29.0)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0)
   react-evefyou-hooks:
-    specifier: '>=1.0.23'
-    version: 1.0.23(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.12)(react@18.2.0)(recoil@0.7.7)
+    specifier: '>=1.0.25'
+    version: 1.0.25(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.17)(react@18.2.0)(recoil@0.7.7)
   react-evefyou-router:
     specifier: '>=1.0.15'
     version: 1.0.15(ramda@0.29.0)(react-dom@18.2.0)(react-router-dom@6.10.0)(react-router@6.10.0)(react@18.2.0)
@@ -3064,6 +3064,18 @@ packages:
     resolution: {integrity: sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==}
     dev: false
 
+  /js-evefyou-utils@1.0.1(moment@2.29.4)(ramda@0.29.0)(uuid@9.0.0):
+    resolution: {integrity: sha512-GZs9Com6GTkW3KC5Hz9E6QwaWCoyKwufA2isSxBQsIE4eQiaxdvwCIeTP6PXi4/6VBOAfpj3n/YdP3LgmXTRXw==}
+    peerDependencies:
+      moment: '>=2.29.4'
+      ramda: '>=0.29.0'
+      uuid: '>=9.0.0'
+    dependencies:
+      moment: 2.29.4
+      ramda: 0.29.0
+      uuid: 9.0.0
+    dev: false
+
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -4830,8 +4842,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /react-evefyou-common@1.0.12(moment@2.29.4)(ramda@0.29.0)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0):
-    resolution: {integrity: sha512-aNnZqaEKSOrOPTABfZ/0UmwHU11BQadGVubWBhAL1UHF0tgUMKaBuQkrgYSwHSRZzfiGGVQUsRG3x/AilIK9Yw==}
+  /react-evefyou-common@1.0.17(moment@2.29.4)(ramda@0.29.0)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0):
+    resolution: {integrity: sha512-hdJne33UhhXDl7kzykd5WNa4+jib91MeE22Ziv9ku8nMvq38ieeKR9o5P93Ofe2w5LoBR93At9nXSvr5lY2u5Q==}
     peerDependencies:
       moment: '>=2.29.4'
       ramda: '>=0.29.0'
@@ -4840,6 +4852,7 @@ packages:
       react-intl: '>=6.4.4'
       uuid: '>=9.0.0'
     dependencies:
+      js-evefyou-utils: 1.0.1(moment@2.29.4)(ramda@0.29.0)(uuid@9.0.0)
       moment: 2.29.4
       ramda: 0.29.0
       react: 18.2.0
@@ -4848,21 +4861,21 @@ packages:
       uuid: 9.0.0
     dev: false
 
-  /react-evefyou-hooks@1.0.23(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.12)(react@18.2.0)(recoil@0.7.7):
-    resolution: {integrity: sha512-oq0gMDzbcU6NrihrJ2ZslZGnS01V37Cj72PA0aHLC0ZqmJjG4QTX3FK+6iI6RCLy2uc80OqqAS77Gd5NsJ60Nw==}
+  /react-evefyou-hooks@1.0.25(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.17)(react@18.2.0)(recoil@0.7.7):
+    resolution: {integrity: sha512-aYkVoBw6QVLG1M9O8zPvDiJYjLjeE4DAzeUEPT9eFr8qmAEcjxQqG53mKiq1T80/URBoF43akqm9KVrMfovlPg==}
     peerDependencies:
       ahooks: '>=3.7.6'
       ramda: '>=0.29.0'
       react: '>=18.2.0'
       react-dom: '>=18.2.0'
-      react-evefyou-common: '>=1.0.12'
+      react-evefyou-common: '>=1.0.17'
       recoil: '>=0.7.7'
     dependencies:
       ahooks: 3.7.6(react@18.2.0)
       ramda: 0.29.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      react-evefyou-common: 1.0.12(moment@2.29.4)(ramda@0.29.0)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0)
+      react-evefyou-common: 1.0.17(moment@2.29.4)(ramda@0.29.0)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0)
       recoil: 0.7.7(react-dom@18.2.0)(react@18.2.0)
     dev: false
 

@@ -9,16 +9,18 @@ import {
   useImperativeHandle,
   useRef,
 } from 'react';
-import { useMountEffect } from 'react-evefyou-hooks';
-import { useUnmountEffect } from 'react-evefyou-hooks';
-import { useDesign } from 'react-evefyou-hooks';
+import { useMountEffect } from 'react-evefyou-hooks/useMountEffect';
+import { useUnmountEffect } from 'react-evefyou-hooks/useUnmountEffect';
+import { useDesign } from 'react-evefyou-hooks/useDesign';
 import {
   BasicScrollBase,
   BasicScrollProps,
 } from './base';
 import { classNames } from './utils';
 import './BasicScroll.less';
-import { addClass, removeClass, getHeight } from 'react-evefyou-common';
+import { addClass } from 'react-evefyou-common/utils/dom/addClass';
+import { removeClass } from 'react-evefyou-common/utils/dom/removeClass';
+import { getHeight } from 'react-evefyou-common/utils/dom/getHeight';
 
 export interface BasicScrollMethods {
   props: BasicScrollProps;

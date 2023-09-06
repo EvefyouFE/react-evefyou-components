@@ -1,12 +1,14 @@
 import { clone, is } from "ramda";
 import { ColumnType } from "antd/es/table";
-import { useUnmountEffect } from "react-evefyou-hooks";
+import { useUnmountEffect } from "react-evefyou-hooks/useUnmountEffect";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { DEFAULT_ALIGN, ROW_KEYS } from "../constants";
 import { BasicTableProps, TableColumnProps, TableColumnPropsWithKey } from "../props";
 import { CellFormat } from "../types/table";
 import { GetColumnsParams, UseColumnsReturnType } from "../types/tableColumns";
-import { formatToDate, formatBaseById, uuid } from "react-evefyou-common";
+import { uuid } from "react-evefyou-common/utils/generate/uuid";
+import { formatToDate } from "react-evefyou-common/utils/date";
+import { formatBaseById } from "react-evefyou-common/locale";
 
 
 function handleItem<T>(item: TableColumnProps<T>, ellipsis?: boolean) {

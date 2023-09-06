@@ -9,7 +9,7 @@
 import { Button, Result } from 'antd';
 import { FC } from 'react';
 import { useNavigate } from 'react-router';
-import { useBaseLocale } from 'react-evefyou-common';
+import { useBaseLocale } from 'react-evefyou-common/locale';
 
 interface ErrorResultProps {
   back?: string;

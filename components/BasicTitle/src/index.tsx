@@ -12,7 +12,7 @@ import { BasicHelp } from '@/BasicHelp';
 import './BasicTitle.less';
 import { BasicTitleProps } from './props';
 import { PropsWithChildrenCls } from 'react-evefyou-common';
-import { useDesign } from 'react-evefyou-hooks';
+import { useDesign } from 'react-evefyou-hooks/useDesign';
 
 export const BasicTitle: FC<PropsWithChildrenCls<BasicTitleProps>> = ({
   span,

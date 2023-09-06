@@ -1,6 +1,6 @@
 {
   "name": "react-evefyou-components",
-  "version": "1.0.38",
+  "version": "1.0.39",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
@@ -85,6 +85,14 @@
       "import": "./es/BasicResult/index.js",
       "require": "./cjs/BasicResult/index.js"
     },
+    "./BasicTabs": {
+      "import": "./es/BasicTabs/index.js",
+      "require": "./cjs/BasicTabs/index.js"
+    },
+    "./BasicList": {
+      "import": "./es/BasicList/index.js",
+      "require": "./cjs/BasicList/index.js"
+    },
     "./MessageHelper": {
       "import": "./es/MessageHelper/index.js",
       "require": "./cjs/MessageHelper/index.js"
@@ -136,8 +144,8 @@
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0",
     "react-draggable": ">=4.4.5",
-    "react-evefyou-common": ">=1.0.12",
-    "react-evefyou-hooks": ">=1.0.23",
+    "react-evefyou-common": ">=1.0.17",
+    "react-evefyou-hooks": ">=1.0.25",
     "react-evefyou-router": ">=1.0.15",
     "react-intl": ">=6.4.4",
     "react-router": ">=6.10.0",

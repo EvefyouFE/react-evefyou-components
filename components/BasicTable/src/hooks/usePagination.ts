@@ -12,7 +12,7 @@ import { useEffect, useMemo, useState } from "react";
 import { PAGE_SIZE, PAGE_SIZE_OPTIONS } from "../constants";
 import { BasicTableProps } from "../props";
 import { UsePaginationReturnType } from "../types/tablePagination";
-import { formatBaseById } from 'react-evefyou-common';
+import { formatBaseById } from 'react-evefyou-common/locale';
 
 
 export const DEFAULT_PAGINATION_PROPS: TablePaginationConfig = {

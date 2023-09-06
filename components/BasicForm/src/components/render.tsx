@@ -8,7 +8,8 @@ import { itemComponentMap } from '../itemComponentMap';
 import { ItemInnerProps } from '../props';
 import { createPlaceholderMessage, validator } from '../utils/helper';
 import { BasicHelp } from '@/BasicHelp';
-import { Nullable, Recordable, formatBaseById } from "react-evefyou-common";
+import { formatBaseById } from "react-evefyou-common/locale";
+import { Nullable, Recordable } from "react-evefyou-common";
 
 function renderLabelHelpMessage({
   label,

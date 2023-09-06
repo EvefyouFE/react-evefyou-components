@@ -1,7 +1,7 @@
 import { Button, Result } from 'antd';
 import { FC } from 'react';
 import { useNavigate } from 'react-router';
-import { formatBaseById } from 'react-evefyou-common';
+import { formatBaseById } from 'react-evefyou-common/locale';
 
 interface ForbiddenResultProps {
   back?: string;

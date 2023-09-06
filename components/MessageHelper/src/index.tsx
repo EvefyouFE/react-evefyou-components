@@ -16,7 +16,7 @@ import {
   InfoCircleFilled,
 } from '@ant-design/icons';
 import { ConfirmOptions, ModalOptionsEx, ModalOptionsPartial } from "./props";
-import { formatBaseById } from "react-evefyou-common";
+import { formatBaseById } from "react-evefyou-common/locale";
 
 
 function getIcon(iconType: string) {
