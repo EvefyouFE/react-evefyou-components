@@ -1,6 +1,6 @@
 {
   "name": "react-evefyou-components",
-  "version": "1.0.40",
+  "version": "1.0.42",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
@@ -145,7 +145,7 @@
     "react-dom": ">=18.2.0",
     "react-draggable": ">=4.4.5",
     "react-evefyou-common": ">=1.0.17",
-    "react-evefyou-hooks": ">=1.0.25",
+    "react-evefyou-hooks": ">=1.0.27",
     "react-evefyou-router": ">=1.0.15",
     "react-intl": ">=6.4.4",
     "react-router": ">=6.10.0",
