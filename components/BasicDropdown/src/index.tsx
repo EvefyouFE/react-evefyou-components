@@ -11,6 +11,7 @@ import { MenuDividerType, MenuItemType } from 'antd/es/menu/hooks/useItems';
 import { FC, memo } from 'react';
 import { BasicIcon } from '@/BasicIcon';
 import { BasicDropdownProps } from './props';
+import 'virtual:windi.css';
 
 export const BasicDropdown: FC<BasicDropdownProps> = ({
   popconfirm,

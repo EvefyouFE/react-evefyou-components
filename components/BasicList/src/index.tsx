@@ -13,6 +13,7 @@ import { BasicListProps } from "./props";
 import { BasicListInstance, BasicListItem } from "./typing";
 import { deepCompareObj } from "react-evefyou-common/utils/object/deepCompareObj";
 import 'virtual:windi.css';
+import classNames from "classnames";
 
 export const BasicList = memo(React.forwardRef(<T extends BasicListItem>(
   props: BasicListProps<T>,
@@ -24,24 +25,24 @@ export const BasicList = memo(React.forwardRef(<T extends BasicListItem>(
     pagination: paginationConfig,
     itemCls
   } = props
-  const [pagination] = useListPagination(paginationConfig || {})
+  const [pagination] = useListPagination(paginationConfig)
 
   const basicListInstance = useMemo(() => ({
-    init: () => { },
     pagination
   }), [pagination])
 
   useImperativeHandle(ref, () => basicListInstance, [basicListInstance])
 
-
+  const listCls = classNames('w-full', className)
+  const listItemCls = classNames('flex w-full items-center justify-between', itemCls)
   return (
     <List<T>
-      className={`w-full ${className}`}
+      className={listCls}
       pagination={pagination}
       dataSource={dataSource}
       renderItem={(item) => (
         <List.Item
-          className={`flex w-full items-center justify-between ${itemCls}`}
+          className={listItemCls}
           key={item.key}
         >
           {item.content}

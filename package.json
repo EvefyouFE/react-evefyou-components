@@ -1,6 +1,6 @@
 {
   "name": "react-evefyou-components",
-  "version": "1.0.42",
+  "version": "1.0.43",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
@@ -15,15 +15,15 @@
       "import": "./css/windi.css",
       "require": "./css/windi.css"
     },
-    "./locale/zh_CN": {
-      "import": "./es/locale/zh_CN/index.js",
-      "require": "./cjs/locale/zh_CN/index.js",
-      "types": "./es/locale/zh_CN/index.d.ts"
+    "./locales/zh_CN": {
+      "import": "./es/locales/zh_CN/index.js",
+      "require": "./cjs/locales/zh_CN/index.js",
+      "types": "./es/locales/zh_CN/index.d.ts"
     },
-    "./locale/en_US": {
-      "import": "./es/locale/en_US/index.js",
-      "require": "./cjs/locale/en_US/index.js",
-      "types": "./es/locale/en_US/index.d.ts"
+    "./locales/en_US": {
+      "import": "./es/locales/en_US/index.js",
+      "require": "./cjs/locales/en_US/index.js",
+      "types": "./es/locales/en_US/index.d.ts"
     },
     "./BasicButton": {
       "import": "./es/BasicButton/index.js",
@@ -145,7 +145,7 @@
     "react-dom": ">=18.2.0",
     "react-draggable": ">=4.4.5",
     "react-evefyou-common": ">=1.0.17",
-    "react-evefyou-hooks": ">=1.0.27",
+    "react-evefyou-hooks": ">=1.0.28",
     "react-evefyou-router": ">=1.0.15",
     "react-intl": ">=6.4.4",
     "react-router": ">=6.10.0",

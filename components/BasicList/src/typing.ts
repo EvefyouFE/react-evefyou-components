@@ -9,7 +9,7 @@ export interface BasicListItem {
 }
 
 export interface BasicListInstance<T extends BasicListItem> extends BaseInstance<BasicListProps<T>> {
-  pagination: PaginationConfig;
+  pagination: PaginationConfig | false;
 }
 
 export interface BasicListSetting {
