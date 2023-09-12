@@ -5,7 +5,7 @@ export type AntdMenuItem = Required<MenuProps>['items'][number];
 
 export interface MenuItemLabelProps {
   locale?: string;
-  title: React.ReactNode;
+  title?: React.ReactNode;
   to?: string;
 }
 

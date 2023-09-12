@@ -12,6 +12,7 @@ import { FC, PropsWithChildren, useMemo } from 'react';
 import { BasicButtonProps } from './props';
 import { BasicIcon } from '@/BasicIcon';
 import { useNativeProps } from "react-evefyou-hooks/useNativeProps";
+import { useDesign } from "react-evefyou-hooks/useDesign";
 
 export const BasicButton: FC<PropsWithChildren<BasicButtonProps>> = ({
   preIcon,
@@ -22,24 +23,30 @@ export const BasicButton: FC<PropsWithChildren<BasicButtonProps>> = ({
   ...rest
 }) => {
   const { disabled } = rest;
-  const getButtonClass = useMemo(
+  const { prefixCls } = useDesign('basic-button')
+  const clsName = useMemo(
     () =>
-      classNames([
-        {
-          [`ant-btn-${color}`]: !!color,
-          [`is-disabled`]: disabled,
-        },
-      ]),
-    [color, disabled],
+      classNames(
+        prefixCls,
+        [
+          {
+            [`ant-btn-${color}`]: !!color,
+            [`is-disabled`]: disabled,
+          },
+        ]
+      ),
+    [color, disabled, prefixCls],
   );
+  const preIconClsName = classNames(prefixCls.concat('-pre-icon'))
+  const postIconClsName = classNames(prefixCls.concat('-post-icon'))
 
   const nativeProps = useNativeProps(rest, { excludeDefaultKeys: false });
 
   return (
-    <Button className={getButtonClass} {...nativeProps} color={color}>
-      {preIcon && <BasicIcon icon={preIcon} size={iconSize} />}
+    <Button className={clsName} {...nativeProps} color={color}>
+      {preIcon && <BasicIcon className={preIconClsName} icon={preIcon} size={iconSize} />}
       {children}
-      {postIcon && <BasicIcon icon={postIcon} size={iconSize} />}
+      {postIcon && <BasicIcon className={postIconClsName} icon={postIcon} size={iconSize} />}
     </Button>
   );
 };

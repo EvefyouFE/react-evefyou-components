@@ -1,19 +1,16 @@
 import { Empty } from 'antd';
+import classNames from "classnames";
 import { FC } from 'react';
+import { PropsWithCls } from "react-evefyou-common";
+import { useDesign } from "react-evefyou-hooks/useDesign";
 
-interface EmptyResultProps {
-  back?: string;
-  title?: string;
-  subTitle?: string;
-  btnName?: string;
+export interface EmptyResultProps extends PropsWithCls {
 }
 
 export const EmptyResult: FC<EmptyResultProps> = ({
-  back,
-  title,
-  subTitle,
-  btnName,
+  className
 }) => {
-  console.debug(back, title, subTitle, btnName);
-  return <Empty />;
+  const { prefixCls } = useDesign('basic-result-empty')
+  const clsName = classNames(prefixCls, className)
+  return <Empty className={clsName} />;
 };

@@ -12,7 +12,7 @@ import { SpaceSize } from "antd/es/space";
 import { CSSProperties, MouseEventHandler } from "react";
 import { ItemComponentType } from "./types/form";
 import { BasicHelpProps } from "@/BasicHelp";
-import { Recordable } from "react-evefyou-common";
+import { PropsWithCls, Recordable } from "react-evefyou-common";
 
 export interface RenderCallbackParams {
     props: ItemProps;
@@ -44,7 +44,7 @@ export interface ItemProps extends Omit<FormItemProps, 'required'> {
     dynamicRules?: (params: RenderCallbackParams) => FormItemProps['rules'];
 }
 
-export interface BasicFormItemProps {
+export interface BasicFormItemProps extends PropsWithCls {
     // 渲染与否
     canRender?: boolean;
     // 隐藏与否

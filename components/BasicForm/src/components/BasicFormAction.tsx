@@ -12,6 +12,8 @@ import { Button, Form, Space } from 'antd';
 import { memo, useMemo } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { BasicFormActionProps } from '../props';
+import { useDesign } from "react-evefyou-hooks/useDesign";
+import classNames from "classnames";
 
 export function BasicFormActionFn({
   expand,
@@ -44,8 +46,10 @@ export function BasicFormActionFn({
     [resetBtnOptions],
   );
 
+  const { prefixCls } = useDesign('basic-form-action')
+  const clsName = classNames(prefixCls)
   return (
-    <div style={{ textAlign }}>
+    <div style={{ textAlign }} className={clsName}>
       <Space size={size}>
         {renderSubmitBefore}
         {showSubmit && (

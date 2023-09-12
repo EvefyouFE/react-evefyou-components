@@ -11,8 +11,12 @@ import { Icon as Iconify } from '@iconify/react';
 import { FC, isValidElement } from 'react';
 import { ImgIcon } from '@/BasicIcon/src/components/ImgIcon';
 import { BasicIconProps } from './props';
+import { useDesign } from "react-evefyou-hooks/useDesign";
+import classNames from "classnames";
 
-export const BasicIcon: FC<BasicIconProps> = ({ icon, size, iconifyInline, ...rest }) => {
+export const BasicIcon: FC<BasicIconProps> = ({ icon, size, iconifyInline, className, ...rest }) => {
+  const { prefixCls } = useDesign('basic-icon')
+  const clsName = classNames(prefixCls, className)
   if (!icon) return null;
   if (isValidElement(icon)) {
     return icon;
@@ -20,7 +24,7 @@ export const BasicIcon: FC<BasicIconProps> = ({ icon, size, iconifyInline, ...re
   if (typeof icon !== 'string') return null;
 
   if (icon.indexOf('http') !== -1 || icon.indexOf(':') === -1) {
-    return <ImgIcon url={icon} width={size} height={size} />;
+    return <ImgIcon className={clsName} url={icon} width={size} height={size} />;
   }
   const idx = icon.indexOf(':');
   const supplier = idx && icon.slice(0, idx);
@@ -31,9 +35,9 @@ export const BasicIcon: FC<BasicIconProps> = ({ icon, size, iconifyInline, ...re
       // eslint-disable-next-line no-case-declarations
       const antIcon: { [key: string]: any } = icons;
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      return <Icon component={antIcon[name]} size={size} {...rest} />;
+      return <Icon className={clsName} component={antIcon[name]} size={size} {...rest} />;
     case 'iconify':
-      return <Iconify inline={iconifyInline} icon={name} {...rest} />;
+      return <Iconify className={clsName} inline={iconifyInline} icon={name} {...rest} />;
     default:
       return null;
   }

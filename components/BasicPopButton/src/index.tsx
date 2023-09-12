@@ -11,13 +11,17 @@ import { FC } from 'react';
 import { BasicButton } from '@/BasicButton';
 import { formatBaseById } from 'react-evefyou-common/locale';
 import { BasicPopButtonProps } from '@/BasicPopButton';
+import { useDesign } from "react-evefyou-hooks/useDesign";
+import classNames from "classnames";
 
 export const BasicPopButton: FC<BasicPopButtonProps> = (props) => {
-  const { popconfirmProps, color, disabled, ...rest } = props;
-
+  const { popconfirmProps, color, disabled, className, ...rest } = props;
+  const { prefixCls } = useDesign('basic-pop-button')
+  const clsName = classNames(prefixCls, className)
   const popconfirmPropsMemo = popconfirmProps && {
     okText: formatBaseById('components.button.okText'),
     cancelText: formatBaseById('components.button.cancelText'),
+    className: clsName,
     ...popconfirmProps,
   };
 

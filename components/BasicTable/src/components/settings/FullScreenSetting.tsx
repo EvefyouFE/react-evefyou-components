@@ -4,6 +4,7 @@ import { Tooltip, TooltipProps } from 'antd';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useTableContext } from '../../context';
+import { useDesign } from "react-evefyou-hooks/useDesign";
 
 export type FullScreenSettingProps = Partial<TooltipProps>;
 
@@ -12,8 +13,10 @@ export const FullScreenSetting: React.FC<FullScreenSettingProps> = ({
 }) => {
   const { getElement } = useTableContext();
   const [isFullscreen, { toggleFullscreen }] = useFullscreen(getElement);
+  const { prefixCls } = useDesign('basic-table-setting-fullScreen')
   return (
     <Tooltip
+      className={prefixCls}
       placement="top"
       getPopupContainer={getPopupContainer}
       title={

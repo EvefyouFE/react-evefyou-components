@@ -14,6 +14,7 @@ import { BasicListInstance, BasicListItem } from "./typing";
 import { deepCompareObj } from "react-evefyou-common/utils/object/deepCompareObj";
 import 'virtual:windi.css';
 import classNames from "classnames";
+import { useDesign } from "react-evefyou-hooks/useDesign";
 
 export const BasicList = memo(React.forwardRef(<T extends BasicListItem>(
   props: BasicListProps<T>,
@@ -33,8 +34,9 @@ export const BasicList = memo(React.forwardRef(<T extends BasicListItem>(
 
   useImperativeHandle(ref, () => basicListInstance, [basicListInstance])
 
-  const listCls = classNames('w-full', className)
-  const listItemCls = classNames('flex w-full items-center justify-between', itemCls)
+  const { prefixCls } = useDesign('basic-list')
+  const listCls = classNames(prefixCls, className)
+  const listItemCls = classNames(prefixCls.concat('-item'), itemCls)
   return (
     <List<T>
       className={listCls}

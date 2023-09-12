@@ -12,6 +12,8 @@ import { FC, memo } from 'react';
 import { BasicIcon } from '@/BasicIcon';
 import { BasicDropdownProps } from './props';
 import 'virtual:windi.css';
+import { useDesign } from "react-evefyou-hooks/useDesign";
+import classNames from "classnames";
 
 export const BasicDropdown: FC<BasicDropdownProps> = ({
   popconfirm,
@@ -19,6 +21,7 @@ export const BasicDropdown: FC<BasicDropdownProps> = ({
   items,
   selectedKeys = [],
   children,
+  className,
   ...props
 }) => {
   const getItems = (): (MenuItemType | MenuDividerType)[] | undefined =>
@@ -44,11 +47,10 @@ export const BasicDropdown: FC<BasicDropdownProps> = ({
           label,
           onClick,
         });
-        divider &&
-          acc.push({
-            key,
-            type: 'divider',
-          });
+        divider && acc.push({
+          key,
+          type: 'divider',
+        });
         return acc;
       },
       [] as (MenuItemType | MenuDividerType)[],
@@ -56,6 +58,8 @@ export const BasicDropdown: FC<BasicDropdownProps> = ({
 
   const { menu, trigger = ['contextMenu'], ...rest } = props;
 
+  const { prefixCls } = useDesign('basic-dropdown')
+  const clsName = classNames(prefixCls, className)
   return (
     <Dropdown
       menu={
@@ -65,6 +69,7 @@ export const BasicDropdown: FC<BasicDropdownProps> = ({
         }
       }
       trigger={trigger}
+      className={clsName}
       {...rest}
     >
       <span>{children}</span>

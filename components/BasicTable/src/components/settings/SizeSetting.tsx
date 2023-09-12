@@ -14,6 +14,8 @@ import { MenuItemType } from 'antd/es/menu/hooks/useItems';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useTableContext } from '../../context';
+import { useDesign } from "react-evefyou-hooks/useDesign";
+import classNames from "classnames";
 
 export type SizeSettingProps = Partial<TooltipProps>;
 
@@ -56,8 +58,11 @@ export const SizeSetting: React.FC<SizeSettingProps> = ({
     setSize(key as SizeType);
     reSelect([key])
   }
+  const { prefixCls } = useDesign('basic-table-setting-size')
+  const clsName = classNames(prefixCls)
   return (
     <Tooltip
+      className={clsName}
       placement="top"
       getPopupContainer={getPopupContainer}
       title={

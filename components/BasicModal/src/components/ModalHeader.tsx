@@ -9,6 +9,8 @@
 import { FC } from 'react';
 import { ModalHeaderProps } from '../props';
 import { BasicTitle } from '@/BasicTitle';
+import { useDesign } from "react-evefyou-hooks/useDesign";
+import classNames from "classnames";
 
 export const ModalHeader: FC<ModalHeaderProps> = ({
   helpMessage,
@@ -16,19 +18,24 @@ export const ModalHeader: FC<ModalHeaderProps> = ({
   onDoubleClick,
   onMouseOver,
   onMouseOut,
-}) => (
-  <div
-    onMouseOver={onMouseOver}
-    onMouseOut={onMouseOut}
-    onFocus={() => onMouseOver?.()}
-    onBlur={() => onMouseOut?.()}
-  >
-    <BasicTitle
-      helpMessage={helpMessage}
-      onDoubleClick={onDoubleClick}
-      className="items-center"
+}) => {
+  const { prefixCls } = useDesign('basic-modal-footer')
+  const clsName = classNames(prefixCls)
+  return (
+    <div
+      className={clsName}
+      onMouseOver={onMouseOver}
+      onMouseOut={onMouseOut}
+      onFocus={() => onMouseOver?.()}
+      onBlur={() => onMouseOut?.()}
     >
-      {title}
-    </BasicTitle>
-  </div>
-);
+      <BasicTitle
+        helpMessage={helpMessage}
+        onDoubleClick={onDoubleClick}
+        className="items-center"
+      >
+        {title}
+      </BasicTitle>
+    </div>
+  )
+}

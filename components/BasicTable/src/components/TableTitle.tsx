@@ -11,6 +11,8 @@ import { useMemo } from 'react';
 import { BasicTitle } from '@/BasicTitle';
 import { TableTitleProps } from '../props';
 import 'virtual:windi.css';
+import { useDesign } from "react-evefyou-hooks/useDesign";
+import classNames from "classnames";
 
 export const TableTitle: React.FC<TableTitleProps> = ({
   title,
@@ -29,9 +31,11 @@ export const TableTitle: React.FC<TableTitleProps> = ({
     return title;
   }, [title, getSelectRows]);
 
+  const { prefixCls } = useDesign('basic-table-title')
+  const clsName = classNames(prefixCls, 'flex items-center justify-between')
   return (
     <BasicTitle
-      className="flex items-center justify-between"
+      className={clsName}
       helpMessage={helpMessage}
     >
       {getTitle}

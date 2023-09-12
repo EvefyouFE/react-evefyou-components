@@ -12,21 +12,26 @@ import { ErrorResult } from './components/ErrorResult';
 import { NotExistResult } from './components/NotExistResult';
 import { ForbiddenResult } from './components/ForbiddenResult';
 import { BasicResultProps } from "./props";
+import { useDesign } from "react-evefyou-hooks/useDesign";
+import classNames from "classnames";
 
 export const BasicResult = ({
   code,
   children,
+  className
 }: BasicResultProps): React.ReactElement => {
+  const { prefixCls } = useDesign('basic-result')
+  const clsName = classNames(prefixCls, className)
   switch (code) {
     case 200:
-      return children || <EmptyResult />;
+      return children || <EmptyResult className={clsName} />;
     case 404:
-      return <NotExistResult />;
+      return <NotExistResult className={clsName} />;
     case 403:
-      return <ForbiddenResult />;
+      return <ForbiddenResult className={clsName} />;
     case 500:
     default:
-      return <ErrorResult />;
+      return <ErrorResult className={clsName} />;
   }
 };
 

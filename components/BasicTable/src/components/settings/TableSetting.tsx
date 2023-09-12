@@ -6,7 +6,7 @@ import { useDesign } from 'react-evefyou-hooks/useDesign';
 import 'virtual:windi.css';
 
 export const TableSetting: React.FC<TableSettingProps> = ({ items }) => {
-  const { prefixCls } = useDesign('table-setting');
+  const { prefixCls } = useDesign('basic-table-setting');
   if (!items) return null;
   const clsName = classNames(prefixCls, 'flex space-x-2 mx-3');
   return <div className={clsName}>{items.map((item) => item)}</div>;

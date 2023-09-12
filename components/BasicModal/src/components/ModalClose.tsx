@@ -7,6 +7,8 @@ import { Tooltip } from 'antd';
 import { FC } from 'react';
 import { ModalCloseProps } from '../props';
 import { formatBaseById } from 'react-evefyou-common/locale';
+import { useDesign } from "react-evefyou-hooks/useDesign";
+import classNames from "classnames";
 
 export const ModalClose: FC<ModalCloseProps> = ({
   showFullscreen = true,
@@ -20,8 +22,10 @@ export const ModalClose: FC<ModalCloseProps> = ({
     onFullScreen?.(e);
   };
 
+  const { prefixCls } = useDesign('basic-modal-close')
+  const clsName = classNames(prefixCls, 'flex items-center space-x-6')
   return (
-    <div className="flex items-center space-x-6">
+    <div className={clsName}>
       {showFullscreen ? (
         isFullscreen ? (
           <Tooltip

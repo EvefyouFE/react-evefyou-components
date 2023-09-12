@@ -15,6 +15,7 @@ import { TableActionItem } from '../types/table';
 import { BasicPopButton } from '@/BasicPopButton/src';
 import { BasicDropdown } from '@/BasicDropdown/src';
 import { BasicIcon } from '@/BasicIcon';
+import { useDesign } from "react-evefyou-hooks/useDesign";
 
 export const TableAction: FC<TableActionProps> = ({
   divider = true,
@@ -23,6 +24,7 @@ export const TableAction: FC<TableActionProps> = ({
   renderItem,
   renderDropdownHeader,
 }) => {
+  const { prefixCls } = useDesign('basic-table-action')
   if (!items && dropDownItems) return null;
 
   const getTooltip = (data: string | TooltipProps): TooltipProps => ({
@@ -72,7 +74,7 @@ export const TableAction: FC<TableActionProps> = ({
   );
 
   return (
-    <div>
+    <div className={prefixCls}>
       {items?.map((item, index) => (
         <React.Fragment key={item.key}>
           {getItem(item)}

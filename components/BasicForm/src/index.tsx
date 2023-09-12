@@ -26,6 +26,8 @@ import { deepCompareObj } from 'react-evefyou-common/utils/object/deepCompareObj
 import { uuid } from 'react-evefyou-common/utils/generate/uuid';
 import { PropsWithChildrenCls } from 'react-evefyou-common';
 import { useFormProps } from './hooks/useFormProps';
+import { useDesign } from "react-evefyou-hooks/useDesign";
+import classNames from "classnames";
 
 export const BasicForm = React.memo(
   React.forwardRef(
@@ -54,6 +56,8 @@ export const BasicForm = React.memo(
 
       useImperativeHandle(ref, () => instance, [instance]);
 
+      const { prefixCls } = useDesign('basic-form')
+      const clsName = classNames(prefixCls, propsState.className)
       const propsValue: BasicFormProps = {
         ...omit(
           [
@@ -63,9 +67,11 @@ export const BasicForm = React.memo(
             'actionProps',
             'rowProps',
             'baseColProps',
+            'className'
           ],
           propsState,
         ),
+        className: clsName
       };
 
       const actionColSpan = useMemo(() => {

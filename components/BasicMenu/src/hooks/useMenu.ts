@@ -9,7 +9,8 @@ export function useMenu() {
   function loopMenuItem(menus?: MenuTreeList): AntdMenuItem[] | undefined {
     return menus?.map((item) => ({
       label: React.createElement(MenuItemLabel, {
-        title: item.locale ? item.locale : item.name || ''
+        locale: item.locale,
+        title: item.name
       }),
       key: item.key ? item.key : item.path,
       icon: React.createElement(BasicIcon, {

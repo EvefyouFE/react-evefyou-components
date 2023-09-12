@@ -11,6 +11,8 @@ import { deepCompareObj } from 'react-evefyou-common/utils/object/deepCompareObj
 import { FC, memo, useMemo } from 'react';
 import { BasicFormItemProps } from '../props';
 import { Item } from './render';
+import { useDesign } from "react-evefyou-hooks/useDesign";
+import classNames from "classnames";
 
 export const BasicFormItemFn: FC<BasicFormItemProps> = (
   props: BasicFormItemProps,
@@ -22,6 +24,7 @@ export const BasicFormItemFn: FC<BasicFormItemProps> = (
     canRender = true,
     hidden = false,
     renderColContent,
+    className
   } = props;
 
   const { getFieldsValue } = Form.useFormInstance();
@@ -47,9 +50,12 @@ export const BasicFormItemFn: FC<BasicFormItemProps> = (
     <Item {...itemInnerProps} />
   );
 
+  const { prefixCls } = useDesign('basic-form-item')
+  const clsName = classNames(prefixCls, className)
   const colPropsValue = {
     ...formProps?.baseColProps,
     ...colProps,
+    className: clsName
   };
 
   return canRender ? (

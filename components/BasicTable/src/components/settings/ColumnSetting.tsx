@@ -58,7 +58,7 @@ export const ColumnSetting: React.FC<ColumnSettingProps> = ({
     PlainOption[]
   >([]);
   const hasInit = useRef<boolean | null>(false);
-  const { prefixCls } = useDesign('column-setting');
+  const { prefixCls } = useDesign('basic-table-setting-column');
   const {
     getDefaultRowSelection,
     getColumns,

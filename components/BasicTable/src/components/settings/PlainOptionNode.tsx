@@ -8,6 +8,8 @@ import { CSS } from '@dnd-kit/utilities';
 import { BasicIcon } from '@/BasicIcon';
 import { PlainOption } from './ColumnSettingType';
 import 'virtual:windi.css';
+import { useDesign } from "react-evefyou-hooks/useDesign";
+import classNames from "classnames";
 
 interface PlainOptionNodeProps {
   item: PlainOption;
@@ -40,11 +42,13 @@ export const PlainOptionNode: FC<PlainOptionNodeProps> = ({
     transition,
     ...(isDragging ? { position: 'relative', zIndex: 9999 } : {}),
   };
+  const { prefixCls } = useDesign('basic-table-plain-option-node')
+  const clsName = classNames(prefixCls, 'flex items-center min-w-full pt-1 pb-2')
   return (
     <div
       ref={setNodeRef}
       key={item.value}
-      className="flex items-center min-w-full pt-1 pb-2"
+      className={clsName}
       style={style}
       {...attributes}
     >
