@@ -15,22 +15,25 @@ import { deepCompareObj } from "react-evefyou-common/utils/object/deepCompareObj
 import 'virtual:windi.css';
 import classNames from "classnames";
 import { useDesign } from "react-evefyou-hooks/useDesign";
+import { useListProps } from "./hooks/useListProps";
 
 export const BasicList = memo(React.forwardRef(<T extends BasicListItem>(
   props: BasicListProps<T>,
   ref: React.ForwardedRef<BasicListInstance<T>>
 ) => {
-  const {
+  const [{
     className,
     dataSource,
     pagination: paginationConfig,
     itemCls
-  } = props
-  const [pagination] = useListPagination(paginationConfig)
+  }] = useListProps(props)
+
+  const [pagination, { setCurrentState }] = useListPagination(paginationConfig)
 
   const basicListInstance = useMemo(() => ({
-    pagination
-  }), [pagination])
+    pagination,
+    setCurrentState
+  }), [pagination, setCurrentState])
 
   useImperativeHandle(ref, () => basicListInstance, [basicListInstance])
 

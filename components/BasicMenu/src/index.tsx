@@ -13,6 +13,7 @@ import './BasicMenu.less';
 import { useDesign } from 'react-evefyou-hooks/useDesign';
 import { useMenu } from "./hooks/useMenu";
 import { BasicMenuProps, AntdMenuItem } from "./props";
+import classNames from "classnames";
 
 export const BasicMenu: FC<BasicMenuProps> = (props) => {
   const { menuTreeList, className = '', mode } = props;
@@ -29,6 +30,7 @@ export const BasicMenu: FC<BasicMenuProps> = (props) => {
     });
   }, []);
 
+  const clsName = classNames(prefixCls, className)
   return (
     <ConfigProvider
       theme={{
@@ -38,7 +40,7 @@ export const BasicMenu: FC<BasicMenuProps> = (props) => {
       }}
     >
       <Menu
-        className={`${className} ${prefixCls}`}
+        className={clsName}
         theme="dark"
         mode={mode}
         defaultSelectedKeys={defaultSelectedKeys}
