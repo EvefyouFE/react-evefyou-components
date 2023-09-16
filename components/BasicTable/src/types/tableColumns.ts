@@ -1,3 +1,4 @@
+import { Recordable } from "react-evefyou-common";
 import { TableColumnProps, TableColumnPropsWithKey } from "../props";
 
 export interface GetColumnsParams {
@@ -5,7 +6,7 @@ export interface GetColumnsParams {
     ignoreAction?: boolean;
     sort?: boolean;
 }
-export interface UseColumnsMethods<T = any> {
+export interface UseColumnsMethods<T extends Recordable = any> {
     getViewColumns: () => TableColumnProps<T>[];
     getColumnsWithIndexAndAction: () => TableColumnProps<T>[];
     setColumns: (columnList: Partial<TableColumnProps<T>>[]) => void;
@@ -15,7 +16,7 @@ export interface UseColumnsMethods<T = any> {
     getCacheColumns: () => TableColumnPropsWithKey<T>[];
     getShowIndexColumn: () => boolean;
 }
-export type UseColumnsReturnType<T = any> = [
+export type UseColumnsReturnType<T extends Recordable = any> = [
     TableColumnProps<T>[],
     UseColumnsMethods<T>
 ]

@@ -1,11 +1,12 @@
 import { useMemo } from "react";
 import { BasicTableProps } from "../props";
 import { UseTableScrollHooksMethods, UseTableScrollReturnType } from "../types/tableScroll";
+import { Recordable } from "react-evefyou-common";
 
-export function useTableScroll(
-    props: BasicTableProps,
+export function useTableScroll<T extends Recordable = any>(
+    props: BasicTableProps<T>,
     methods: UseTableScrollHooksMethods
-): UseTableScrollReturnType {
+): UseTableScrollReturnType<T> {
     const {
         height = 100,
         canResize = true,
@@ -40,7 +41,7 @@ export function useTableScroll(
         const tableWidth = tableEl?.offsetWidth ?? 0;
         return tableWidth > width ? '100%' : width;
     }, [getRowSelection, getViewColumns, tableRef])
-    const scrollMemo: BasicTableProps['scroll'] = useMemo(() => ({
+    const scrollMemo: BasicTableProps<T>['scroll'] = useMemo(() => ({
         x: scrollXMemo,
         y: canResizeMemo ? height : undefined,
         scrollToFirstRowOnChange: false,

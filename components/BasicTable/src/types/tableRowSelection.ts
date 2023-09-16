@@ -1,13 +1,14 @@
 import { GetRowKey, RowSelectMethod } from "antd/es/table/interface";
 import React from "react";
 import { BasicTableProps, TableRowSelectionProps } from "../props";
+import { Recordable } from "react-evefyou-common";
 
-export type UseRowSelectionProps<T = any> = {
+export type UseRowSelectionProps<T extends Recordable = any> = {
     props: BasicTableProps<T>,
     getRowKey: GetRowKey<T>;
 }
 
-export interface UseRowSelectionMethods<T = any> {
+export interface UseRowSelectionMethods<T extends Recordable = any> {
     getRowKey: GetRowKey<T>;
     handleRowSelectionChange: (selectedRowKeys: React.Key[], selectedRows: T[], info: {
         type: RowSelectMethod;
@@ -25,7 +26,7 @@ export interface UseRowSelectionMethods<T = any> {
     rowSelectionIsHidden: () => boolean;
 }
 
-export type UseRowSelectionReturnType<T = any> = [
+export type UseRowSelectionReturnType<T extends Recordable = any> = [
     (BasicTableProps<T>['rowSelection'] | undefined),
     UseRowSelectionMethods<T>
 ]

@@ -39,10 +39,10 @@ export interface TableHeaderProps {
     renderToolbar?: React.ReactNode;
 }
 
-export interface TableRowSelectionProps<T = any> extends TableRowSelection<T> {
+export interface TableRowSelectionProps<T extends Recordable = any> extends TableRowSelection<T> {
     checkMode?: 'strict' | 'default' | 'complex'
 }
-export type TableColumnProps<T = any> = ColumnsType<T>[number] & {
+export type TableColumnProps<T extends Recordable = any> = ColumnsType<T>[number] & {
     type?: 'index' | 'action' | 'normal';
     children?: TableColumnProps<T>[];
     dataIndex?: string | number | readonly (string | number)[];
@@ -55,13 +55,13 @@ export type TableColumnProps<T = any> = ColumnsType<T>[number] & {
     // 配置控制，先有字段(即show)才能配置hidden
     hidden?: boolean;
 }
-export type TableColumnPropsWithKey<T = any> = TableColumnProps<T> & {
+export type TableColumnPropsWithKey<T extends Recordable = any> = TableColumnProps<T> & {
     key: React.Key;
 }
 
-export type IndexColumnProps<T = any> = TableColumnProps<T>;
+export type IndexColumnProps<T extends Recordable = any> = TableColumnProps<T>;
 
-export interface BasicTableProps<T = any> extends Omit<TableProps<T>, 'rowSelection' | 'columns' | 'children'> {
+export interface BasicTableProps<T extends Recordable = any> extends Omit<TableProps<T>, 'rowSelection' | 'columns' | 'children'> {
     height?: number;
     columns?: TableColumnProps<T>[];
     rowSelection?: TableRowSelectionProps<T>;

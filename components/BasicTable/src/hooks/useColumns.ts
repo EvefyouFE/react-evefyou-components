@@ -9,9 +9,10 @@ import { GetColumnsParams, UseColumnsReturnType } from "../types/tableColumns";
 import { uuid } from "react-evefyou-common/utils/generate/uuid";
 import { formatToDate } from "react-evefyou-common/utils/date";
 import { formatBaseById } from "react-evefyou-common/locale";
+import { Recordable } from "react-evefyou-common";
 
 
-function handleItem<T>(item: TableColumnProps<T>, ellipsis?: boolean) {
+function handleItem<T extends Recordable = any>(item: TableColumnProps<T>, ellipsis?: boolean) {
     item.align ??= DEFAULT_ALIGN;
     item.key ??= is(String, item?.dataIndex) ? item?.dataIndex : uuid();
     item.ellipsis ??= ellipsis;
@@ -19,7 +20,7 @@ function handleItem<T>(item: TableColumnProps<T>, ellipsis?: boolean) {
     item.hidden ??= false
 }
 
-function handleIndexColumn<T = any>(
+function handleIndexColumn<T extends Recordable = any>(
     columnsState: TableColumnProps<T>[],
     showIndexColumn = true,
     isTreeTable = false,
@@ -51,7 +52,7 @@ function handleIndexColumn<T = any>(
         })
     }
 }
-function handleActionColumn<T = any>(
+function handleActionColumn<T extends Recordable = any>(
     columnsState: TableColumnProps<T>[],
     children: ColumnType<T>['render'],
     actionColumn?: ColumnType<T>
@@ -82,7 +83,7 @@ function handleActionColumn<T = any>(
     }
 }
 
-export function useColumns<T = any>(props: BasicTableProps<T>): UseColumnsReturnType<T> {
+export function useColumns<T extends Recordable = any>(props: BasicTableProps<T>): UseColumnsReturnType<T> {
     const {
         columns,
         isTreeTable,
@@ -219,7 +220,7 @@ export function useColumns<T = any>(props: BasicTableProps<T>): UseColumnsReturn
     ]);
 }
 
-function sortFixedColumn<T>(columns: TableColumnProps<T>[]) {
+function sortFixedColumn<T extends Recordable = any>(columns: TableColumnProps<T>[]) {
     const fixedLeftColumns: TableColumnProps<T>[] = [];
     const fixedRightColumns: TableColumnProps<T>[] = [];
     const defColumns: TableColumnProps<T>[] = [];

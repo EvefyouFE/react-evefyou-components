@@ -165,7 +165,7 @@ export const BasicTable = React.memo(
     },
   ),
   deepCompareObj,
-) as <T = any>(
+) as <T extends Recordable = any>(
   p: BasicTableProps<T> & { ref?: Ref<BasicTableInstance<T>> },
 ) => ReactElement;
 

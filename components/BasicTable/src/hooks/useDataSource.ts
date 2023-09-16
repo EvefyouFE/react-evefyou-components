@@ -1,8 +1,9 @@
 import { is, isEmpty } from "ramda";
 import { useEffect, useMemo, useState } from "react";
 import { UseDataSourceProps, UseDataSourceReturnType } from "../types/tableDataSource";
+import { Recordable } from "react-evefyou-common";
 
-export function useDataSource<T = any>(
+export function useDataSource<T extends Recordable = any>(
     {
         props,
         getRowKey,

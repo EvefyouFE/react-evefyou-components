@@ -7,16 +7,17 @@ import { RedoSetting } from './components/settings/RedoSetting';
 import { SizeSetting } from './components/settings/SizeSetting';
 import { TableSetting } from './components/settings/TableSetting';
 import { DEFAULT_TABLE_SETTING } from './constants';
-import { UseRednersProps } from './types/tableHook';
+import { UseRendersProps } from './types/tableHook';
 import { TableRenderComp } from './types/table';
 import { TableHeaderProps } from './props';
 import { uuid } from 'react-evefyou-common/utils/generate/uuid';
+import { Recordable } from "react-evefyou-common";
 
 // eslint-disable-next-line react-refresh/only-export-components
 const RenderTableSetting = React.memo(renderTableSettingFn);
 
-export function useBasicTableRenders<T = any>(
-  props: UseRednersProps<T>,
+export function useBasicTableRenders<T extends Recordable = any>(
+  props: UseRendersProps<T>,
 ): TableRenderComp {
   const {
     tableSetting,
@@ -67,12 +68,12 @@ export function useBasicTableRenders<T = any>(
   };
 }
 
-function renderTableSettingFn({
+function renderTableSettingFn<T extends Recordable = any>({
   tableSetting = DEFAULT_TABLE_SETTING,
   onReload,
   onColumnsChange,
   tableRef,
-}: UseRednersProps) {
+}: UseRendersProps<T>) {
   if (!tableSetting) return null;
   const { redo, size, setting, fullScreen } = tableSetting;
   const items = [

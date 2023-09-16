@@ -3,8 +3,9 @@ import { useProps } from "react-evefyou-hooks/useProps"
 import { SizeType } from "antd/es/config-provider/SizeContext"
 import { BasicTableProps, TableRowSelectionProps } from "../props"
 import { UseTablePropsReturnType, UseTablePropsSetMethods } from "../types/tableHook"
+import { Recordable } from "react-evefyou-common"
 
-export function useTableProps<T = any>(props: BasicTableProps<T>): UseTablePropsReturnType<T> {
+export function useTableProps<T extends Recordable = any>(props: BasicTableProps<T>): UseTablePropsReturnType<T> {
     const [propsState, propsMethods] = useProps(props)
     const { setProps } = propsMethods
     const setMethods: UseTablePropsSetMethods<T> = useMemo(() => {

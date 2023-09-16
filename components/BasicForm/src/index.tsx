@@ -35,14 +35,15 @@ export const BasicForm = React.memo(
       props: PropsWithChildrenCls<BasicFormProps<T>>,
       ref: React.ForwardedRef<BasicFormInstance<T>>,
     ) => {
-      const { children } = props;
+      const { children } = props
 
-      const [propsState, propsMethods] = useFormProps(props);
+      const [propsState, propsMethods] = useFormProps(props)
 
-      const { items, rowProps, baseColProps, actionProps, size, showAction } =
-        propsState;
-      const [expand, setExpand] = usePropsState(!!actionProps?.expand);
-      const [form] = Form.useForm<T>();
+      const {
+        items, rowProps, baseColProps, actionProps, size, showAction
+      } = propsState;
+      const [expand, setExpand] = usePropsState(!!actionProps?.expand)
+      const [form] = Form.useForm<T>()
 
       const [itemsMemo] = useFormItems(propsState);
 
@@ -52,7 +53,7 @@ export const BasicForm = React.memo(
           ...form,
         }),
         [propsMethods, form],
-      );
+      )
 
       useImperativeHandle(ref, () => instance, [instance]);
 

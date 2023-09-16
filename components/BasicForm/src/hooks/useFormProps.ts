@@ -10,6 +10,6 @@ import { useProps } from "react-evefyou-hooks/useProps"
 import { BasicFormProps } from "../props"
 import { UseFormPropsReturnType } from "../types/formHooks"
 
-export function useFormProps<T = any>(props: BasicFormProps<T>): UseFormPropsReturnType {
+export function useFormProps<T = any>(props: BasicFormProps<T>): UseFormPropsReturnType<T> {
     return useProps(props)
 }

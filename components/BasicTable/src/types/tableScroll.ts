@@ -1,3 +1,4 @@
+import { Recordable } from "react-evefyou-common";
 import { BasicTableProps } from "../props";
 import { TableHookMethods } from "./tableHook";
 
@@ -9,4 +10,4 @@ export interface UseTableScrollMethods {
   canTableResize: () => boolean;
 }
 
-export type UseTableScrollReturnType = [BasicTableProps['scroll'], UseTableScrollMethods]
+export type UseTableScrollReturnType<T extends Recordable = any> = [BasicTableProps<T>['scroll'], UseTableScrollMethods]
