@@ -10,7 +10,6 @@
 import { ColumnType, TableProps } from "antd/es/table";
 import { ColumnsType, TableRowSelection } from "antd/es/table/interface";
 import React from "react";
-import { BasicFormProps } from "@/BasicForm";
 import { CellFormat, ColumnChangeParam, TableActionItem, TableChangeParams, TableSettingConfig } from "./types/table";
 import { FilterFn, SortFn } from "./types/setting";
 import { Recordable } from "react-evefyou-common";
@@ -77,7 +76,6 @@ export interface BasicTableProps<T = any> extends Omit<TableProps<T>, 'rowSelect
     titleProps?: TableTitleProps;
     canResize?: boolean;
     canResizeParent?: boolean;
-    searchProps?: BasicFormProps;
     indexColumnConfig?: ColumnType<T>;
     actionColumnConfig?: ColumnType<T>;
     showIndexColumn?: boolean;

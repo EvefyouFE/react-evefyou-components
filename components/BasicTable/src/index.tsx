@@ -58,7 +58,7 @@ export const BasicTable = React.memo(
         filterInfo: {},
       });
 
-      const context: TableContextValue = useMemo(
+      const context: TableContextValue<T> = useMemo(
         () => ({
           getElement: () => tableRef.current,
           setSize: propsMethods.setSize,
@@ -76,7 +76,7 @@ export const BasicTable = React.memo(
         [propsMethods, rowSelectionMethods, columnsMethods],
       );
 
-      const instance: BasicTableInstance = useMemo(
+      const instance: BasicTableInstance<T> = useMemo(
         () => ({
           init: propsMethods.init,
           getElement: () => tableRef.current,
@@ -100,7 +100,7 @@ export const BasicTable = React.memo(
         propsState;
       const renderCaption = !title ? renderTableHeader : caption;
       const propsValue: TableProps<T> = {
-        ...omit(['children', 'searchProps', 'tableSetting',], restPropsState),
+        ...omit(['children', 'tableSetting',], restPropsState),
         scroll: scrollMemo,
         onHeaderRow: handleHeaderRow,
         caption: renderCaption,
@@ -166,7 +166,7 @@ export const BasicTable = React.memo(
   ),
   deepCompareObj,
 ) as <T = any>(
-  p: BasicTableProps<T> & { ref?: Ref<BasicTableInstance> },
+  p: BasicTableProps<T> & { ref?: Ref<BasicTableInstance<T>> },
 ) => ReactElement;
 
 export default BasicTable;

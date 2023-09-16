@@ -18,8 +18,8 @@ export interface ItemComponentParams {
   formModel: Recordable;
 }
 
-export type UseFormPropsMethods = Pick<UsePropsMethods<BasicFormProps>, 'init'>;
-export type UseFormPropsReturnType = [BasicFormProps, UseFormPropsMethods]
-export type FormHookMethods = UseFormPropsMethods;
-export interface BasicFormInstance<T = any> extends FormInstance<T>, BaseInstance<BasicFormProps> {
+export type UseFormPropsMethods<T = any> = Pick<UsePropsMethods<BasicFormProps<T>>, 'init'>;
+export type UseFormPropsReturnType<T = any> = [BasicFormProps<T>, UseFormPropsMethods]
+export type FormHookMethods<T = any> = UseFormPropsMethods<T>;
+export interface BasicFormInstance<T = any> extends FormInstance<T>, BaseInstance<BasicFormProps<T>> {
 }

@@ -17,7 +17,7 @@ export interface ModalHookMethods extends UseModalPropsMethods {
     openModal: <T = any>(props?: boolean, data?: T, openOnSet?: boolean) => void;
 }
 
-export interface ModalInstance extends BaseInstance<BasicModalProps>, Pick<ModalHookMethods,
+export interface BasicModalInstance extends BaseInstance<BasicModalProps>, Pick<ModalHookMethods,
     'openModal'
     | 'closeModal'
     | 'openOkLoading'
@@ -51,7 +51,7 @@ export type ModalContextProps = PropsWithChildren;
 
 export interface ModalInnerProps {
     fullScreen: [boolean, Actions];
-    instance: ModalInstance;
+    instance: BasicModalInstance;
     okLoadingState: boolean;
     disabled: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
 }

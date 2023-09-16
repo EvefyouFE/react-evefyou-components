@@ -4,3 +4,4 @@ export * from "./usePagination";
 export * from "./useRowSelection";
 export * from "./useTableProps";
 export * from "./useTableScroll";
+export * from "./useTableInstance";

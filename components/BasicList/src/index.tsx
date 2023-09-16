@@ -21,20 +21,26 @@ export const BasicList = memo(React.forwardRef(<T extends BasicListItem>(
   props: BasicListProps<T>,
   ref: React.ForwardedRef<BasicListInstance<T>>
 ) => {
-  const [{
-    className,
-    dataSource,
-    pagination: paginationConfig,
-    itemCls
-  }] = useListProps(props)
+  const [
+    {
+      className,
+      dataSource,
+      pagination: paginationConfig,
+      itemCls
+    },
+    {
+      init
+    }
+  ] = useListProps(props)
 
-  const [pagination, { setCurrentState }] = useListPagination(paginationConfig)
+  const [pagination, { getPagination, setPagination }] = useListPagination(paginationConfig)
 
   const basicListInstance = useMemo(() => ({
+    init,
     pagination,
-    setCurrentState
-  }), [pagination, setCurrentState])
-
+    getPagination,
+    setPagination
+  }), [init, pagination, getPagination, setPagination])
   useImperativeHandle(ref, () => basicListInstance, [basicListInstance])
 
   const { prefixCls } = useDesign('basic-list')

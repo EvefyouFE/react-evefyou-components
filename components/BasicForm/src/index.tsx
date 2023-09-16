@@ -32,7 +32,7 @@ import classNames from "classnames";
 export const BasicForm = React.memo(
   React.forwardRef(
     <T = any>(
-      props: PropsWithChildrenCls<BasicFormProps>,
+      props: PropsWithChildrenCls<BasicFormProps<T>>,
       ref: React.ForwardedRef<BasicFormInstance<T>>,
     ) => {
       const { children } = props;
@@ -58,7 +58,7 @@ export const BasicForm = React.memo(
 
       const { prefixCls } = useDesign('basic-form')
       const clsName = classNames(prefixCls, propsState.className)
-      const propsValue: BasicFormProps = {
+      const propsValue: BasicFormProps<T> = {
         ...omit(
           [
             'children',
@@ -127,7 +127,6 @@ export const BasicForm = React.memo(
   ),
   deepCompareObj,
 ) as <T = any>(
-  p: PropsWithChildrenCls<BasicFormProps> & { ref?: Ref<BasicFormInstance<T>> },
+  p: PropsWithChildrenCls<BasicFormProps<T>> & { ref?: Ref<BasicFormInstance<T>> },
 ) => ReactElement;
 
-export default BasicForm

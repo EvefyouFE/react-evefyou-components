@@ -9,7 +9,7 @@
 import Icon, * as icons from '@ant-design/icons';
 import { Icon as Iconify } from '@iconify/react';
 import { FC, isValidElement } from 'react';
-import { ImgIcon } from '@/BasicIcon/src/components/ImgIcon';
+import { ImgIcon } from './components/ImgIcon';
 import { BasicIconProps } from './props';
 import { useDesign } from "react-evefyou-hooks/useDesign";
 import classNames from "classnames";

@@ -44,12 +44,12 @@ export interface ItemProps extends Omit<FormItemProps, 'required'> {
     dynamicRules?: (params: RenderCallbackParams) => FormItemProps['rules'];
 }
 
-export interface BasicFormItemProps extends PropsWithCls {
+export interface BasicFormItemProps<T = any> extends PropsWithCls {
     // 渲染与否
     canRender?: boolean;
     // 隐藏与否
     hidden?: boolean;
-    formProps?: Partial<BasicFormProps>;
+    formProps?: Partial<BasicFormProps<T>>;
     itemProps?: ItemProps;
     colProps?: Partial<ColProps>;
     renderColContent?: (params: RenderCallbackParams) => React.ReactNode;
@@ -73,7 +73,7 @@ export interface BasicFormActionProps {
     renderExpandAfter?: React.ReactNode;
 }
 
-export interface BasicFormProps extends FormProps {
+export interface BasicFormProps<T = any> extends FormProps<T> {
     baseColProps?: Partial<ColProps>;
     rowProps?: RowProps;
     autoSetPlaceHolder?: boolean;

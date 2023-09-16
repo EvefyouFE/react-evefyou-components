@@ -1,37 +1,45 @@
 import { PaginationConfig } from "antd/es/pagination"
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { LIST_PAGE_SIZE } from "../constants";
-import { equals } from "ramda";
-
-export type UseListPaginationMethods = {
-  setCurrentState: React.Dispatch<React.SetStateAction<number>>
-}
+import { isEmpty } from "ramda";
+import { UseListPaginationMethods } from "../typing";
 
 export const DEFAULT_BASIC_LIST_PAGINATION: PaginationConfig = {
   position: 'bottom',
   align: 'center',
   size: 'small',
+  current: 1,
   pageSize: LIST_PAGE_SIZE,
 }
 
-export function useListPagination(paginationConfig?: PaginationConfig | false): [PaginationConfig | false, UseListPaginationMethods] {
-  const [currentState, setCurrentState] = useState(1);
-  return useMemo(() => {
-    const onChange = (page: number, pageSize: number) => {
-      console.log('pageSize', pageSize)
-      setCurrentState(page);
+export function useListPagination(pagination?: PaginationConfig | false): [PaginationConfig | false, UseListPaginationMethods] {
+  const [paginationState, setPaginationState] = useState<PaginationConfig | false>(pagination ?? {})
+  useEffect(() => {
+    if (pagination) {
+      setPaginationState(p => ({
+        ...p,
+        ...(isEmpty(p) ? DEFAULT_BASIC_LIST_PAGINATION : p),
+        ...pagination,
+      }))
     }
-    const pagination = {
-      ...DEFAULT_BASIC_LIST_PAGINATION,
-      current: currentState,
-      onChange,
-      ...paginationConfig
-    } as PaginationConfig
+  }, [pagination])
+
+  return useMemo(() => {
+    function getPagination() {
+      return paginationState
+    }
+    function setPagination(info: Partial<PaginationConfig | false>) {
+      setPaginationState({
+        ...paginationState,
+        ...info,
+      })
+    }
     return [
-      equals(paginationConfig, false) ? false : pagination,
+      paginationState,
       {
-        setCurrentState
+        getPagination,
+        setPagination,
       }
     ]
-  }, [currentState, paginationConfig])
+  }, [paginationState]);
 }

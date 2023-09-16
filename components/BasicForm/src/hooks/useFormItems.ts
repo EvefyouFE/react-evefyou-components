@@ -2,12 +2,12 @@ import { useMemo } from "react";
 import { BasicFormItemProps, BasicFormProps } from "../props";
 
 
-export type UseFormItemsReturnType = [
-    BasicFormItemProps[],
+export type UseFormItemsReturnType<T = any> = [
+    BasicFormItemProps<T>[],
     object
 ]
 
-export function useFormItems(props: BasicFormProps): UseFormItemsReturnType {
+export function useFormItems<T = any>(props: BasicFormProps<T>): UseFormItemsReturnType<T> {
     const {
         items,
         showExpand = false,

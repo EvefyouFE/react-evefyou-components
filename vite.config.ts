@@ -96,6 +96,7 @@ export default defineConfig({
       build: {
         manifest: true,
         minify: true,
+        sourcemap: true,
         reportCompressedSize: true,
         cssCodeSplit: true,
         outDir: '.',

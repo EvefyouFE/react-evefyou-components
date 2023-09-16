@@ -8,7 +8,18 @@ export interface BasicListItem {
   content: React.ReactNode;
 }
 
-export interface BasicListInstance<T extends BasicListItem> extends BaseInstance<BasicListProps<T>> {
+export type UseListPaginationMethods = {
+  getPagination: () => PaginationConfig | false;
+  setPagination: (info: Partial<PaginationConfig | false>) => void;
+}
+
+export type ListHookMethods = UseListPaginationMethods
+
+export interface BasicListInstance<T extends BasicListItem> extends BaseInstance<BasicListProps<T>>,
+  Pick<UseListPaginationMethods,
+    "getPagination"
+    | "setPagination"
+  > {
   pagination: PaginationConfig | false;
 }
 
